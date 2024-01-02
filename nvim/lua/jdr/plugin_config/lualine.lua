@@ -1,14 +1,15 @@
 require("lualine").setup({
     options = {
         icons_enabled = true,
-        theme = 'nightfly',
+        theme = 'catppuccin',
     },
     sections = {
-        lualine_a = {
+        lualine_x = {
             {
-                'filename',
-                path = 1,
+                require("noice").api.statusline.mode.get,
+                cond = require("noice").api.statusline.mode.has,
+                color = { fg = "#ff9e64" },
             }
-        }
-    }
+        },
+    },
 })
