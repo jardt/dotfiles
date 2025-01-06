@@ -8,6 +8,8 @@ type starship_zle-keymap-select >/dev/null || \
 
 #vim stuff
 set -o vi
+export VISUAL="nvim"
+export EDITOR="nvim"
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
