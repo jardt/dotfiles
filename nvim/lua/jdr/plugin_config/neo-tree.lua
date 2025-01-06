@@ -233,4 +233,4 @@ require("neo-tree").setup({
 })
 
 vim.cmd([[nnoremap \ :Neotree reveal left <cr>]])
-vim.keymap.set('n', '<leader>e', ':Neotree toggle <CR>')
+vim.keymap.set('n', '<leader>ne', ':Neotree toggle <CR>')
