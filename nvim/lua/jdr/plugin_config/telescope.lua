@@ -2,8 +2,9 @@ local telescope = require("telescope")
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 local extensions = require("telescope").extensions
+local telescopeTrouble = require("trouble.providers.telescope")
 
-local trouble = require("trouble.providers.telescope")
+local trouble = require("trouble.sources.telescope")
 
 local function flash(prompt_bufnr)
     require("flash").jump({
@@ -29,14 +30,14 @@ telescope.setup({
         path_display = { "smart" },
         mappings = {
             n = { 
-                ["<c-t>"] = trouble.open_with_trouble,
+                ["<c-t>"] = trouble.open,
                 ["s"] = flash,
                 ["q"] = actions.close,
 
             },
             i = { 
                 ["<c-s>"] = flash,
-                ["<c-t>"] = trouble.open_with_trouble,
+                ["<c-t>"] = trouble.open,
                 ["<Esc>"] = require("telescope.actions").close, -- don't go into normal mode, just close
                 ["<C-j>"] = require("telescope.actions").move_selection_next, -- scroll the list with <c-j>
                 ["<C-k>"] = require("telescope.actions").move_selection_previous, -- scroll the list with <c-k>
@@ -59,7 +60,7 @@ telescope.setup({
             preview_cutoff = 120,
         },
         file_sorter = require("telescope.sorters").get_fuzzy_file,
-        file_ignore_patterns = { "node_modules" },
+        --file_ignore_patterns = { "node_modules" },
         generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
         path_display = { "truncate" },
         winblend = 0,
@@ -90,10 +91,12 @@ telescope.load_extension("git_worktree")
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fG', builtin.grep_string, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fc', builtin.git_commits, {})
-vim.keymap.set('n', '<leader>fcb', builtin.git_bcommits, {})
+vim.keymap.set('n', '<leader>fC', builtin.git_commits, {})
+vim.keymap.set('n', '<leader>fc', builtin.git_bcommits, {})
 vim.keymap.set('n', '<leader>fB', builtin.git_branches, {})
+vim.keymap.set('n', '<leader>f:', builtin.commands, {})
 vim.keymap.set("n", "<leader>gwt", telescope.extensions.git_worktree.git_worktrees, {})
 vim.keymap.set("n", "<leader>gwa", telescope.extensions.git_worktree.git_worktrees, {})
 

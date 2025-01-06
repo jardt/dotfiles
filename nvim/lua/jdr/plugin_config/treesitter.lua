@@ -1,8 +1,18 @@
 local configs = require("nvim-treesitter.configs")
 configs.setup({
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "html", 'typescript', 'tsx', 'css',
+    ensure_installed = { 
+        "c", 
+        "lua",
+        "vim", 
+        "vimdoc",
+        "javascript",
+        "html",
+        'typescript',
+        'tsx',
+        'css',
+        'c_sharp',
         "bash",
-        "c",
+        "go",
         "comment",
         "css",
         "diff",
@@ -15,10 +25,12 @@ configs.setup({
         "jsonc",
         "markdown",
         "markdown_inline",
+        "astro",
         "pug",
         "regex",
         "rust",
         "yaml",
+        "solidity",
     },
     highlight = { enable = true, use_languagetree = true },
     indent = { enable = true },
@@ -28,6 +40,3 @@ configs.setup({
     autotag = { enable = true },
     context_commentstring = { enable = true },
 })
-
-
-require('nvim-ts-autotag').setup()

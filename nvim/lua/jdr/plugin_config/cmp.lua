@@ -1,4 +1,3 @@
-
 local lspkind = require("lspkind")
 local cmp = require("cmp")
 local tailwind_formatter = require("tailwindcss-colorizer-cmp").formatter
@@ -7,11 +6,6 @@ vim.o.completeopt = "menu,menuone,noselect"
 
 cmp.setup({
     ghost_text = { enabled = true },
-    snippet = {
-        expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body)
-        end,
-    },
     mapping = {
         ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
         ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -23,7 +17,6 @@ cmp.setup({
     },
     sources = cmp.config.sources({
         { name = "copilot" },
-        { name = "vsnip" },
         { name = "nvim_lua" },
         { name = "nvim_lsp" },
         { name = "buffer", keyword_length = 5, max_item_count = 5 },

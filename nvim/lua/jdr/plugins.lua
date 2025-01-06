@@ -17,9 +17,6 @@ require("lazy").setup({
             require("lazy.core.loader").add_to_rtp(plugin)
             require("nvim-treesitter.query_predicates")
         end,
-        dependencies = {
-            "windwp/nvim-ts-autotag"
-        }
     },
     {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
     {'williamboman/mason.nvim'},
@@ -118,4 +115,13 @@ require("lazy").setup({
     },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     {"thePrimeagen/git-worktree.nvim"},
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "cd app && yarn install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
+    },
 })
