@@ -87,7 +87,7 @@ require("lazy").setup({
         event = "VeryLazy",
         keys = {
             {
-                "ss",
+                "s",
                 mode = { "n", "x", "o" },
                 function()
                     require("flash").jump()
@@ -130,13 +130,13 @@ require("lazy").setup({
         keys = {
             -- 👇 in this section, choose your own keymappings!
             {
-                "<leader>e",
+                "<leader>y",
                 "<cmd>Yazi<cr>",
                 desc = "Open yazi at the current file",
             },
             {
                 -- Open in the current working directory
-                "<leader>e.",
+                "<leader>Y",
                 "<cmd>Yazi cwd<cr>",
                 desc = "Open the file manager in nvim's working directory" ,
             },

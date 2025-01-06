@@ -114,6 +114,8 @@ require("neo-tree").setup({
             },
             ["<2-LeftMouse>"] = "open",
             ["<cr>"] = "open",
+            ["l"] = "open",
+            ["h"] = "close_nod", 
             ["<esc>"] = "cancel", -- close preview or floating neo-tree window
             ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
             -- Read `# Preview Mode` for more information
@@ -233,4 +235,4 @@ require("neo-tree").setup({
 })
 
 vim.cmd([[nnoremap \ :Neotree reveal left <cr>]])
-vim.keymap.set('n', '<leader>ne', ':Neotree toggle <CR>')
+vim.keymap.set('n', '<leader>e', ':Neotree toggle <CR>')
