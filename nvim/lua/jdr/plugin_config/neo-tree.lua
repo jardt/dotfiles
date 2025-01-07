@@ -115,11 +115,11 @@ require("neo-tree").setup({
             ["<2-LeftMouse>"] = "open",
             ["<cr>"] = "open",
             ["l"] = "open",
-            ["h"] = "close_nod", 
+            ["h"] = "close_node", 
             ["<esc>"] = "cancel", -- close preview or floating neo-tree window
-            ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
+            ["p"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
             -- Read `# Preview Mode` for more information
-            ["l"] = "focus_preview",
+            ["P"] = "focus_preview",
             ["b"] = "open_split",
             ["v"] = "open_vsplit",
             -- ["S"] = "split_with_window_picker",
