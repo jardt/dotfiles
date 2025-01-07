@@ -6,6 +6,9 @@ type starship_zle-keymap-select >/dev/null || \
     eval "$(starship init zsh)"
   }
 
+#fzf
+source <(fzf --zsh)
+
 #vim stuff
 set -o vi
 export VISUAL="nvim"

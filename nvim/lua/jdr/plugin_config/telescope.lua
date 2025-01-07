@@ -4,7 +4,7 @@ local builtin = require("telescope.builtin")
 local extensions = require("telescope").extensions
 local telescopeTrouble = require("trouble.providers.telescope")
 
-local trouble = require("trouble.sources.telescope")
+local open_with_trouble = require("trouble.sources.telescope").open
 
 local function flash(prompt_bufnr)
     require("flash").jump({
@@ -30,20 +30,19 @@ telescope.setup({
         path_display = { "smart" },
         mappings = {
             n = { 
-                ["<c-t>"] = trouble.open,
                 ["s"] = flash,
                 ["q"] = actions.close,
-
+                ["<c-x>"] = open_with_trouble ,
             },
             i = { 
                 ["<c-s>"] = flash,
-                ["<c-t>"] = trouble.open,
                 ["<Esc>"] = require("telescope.actions").close, -- don't go into normal mode, just close
                 ["<C-j>"] = require("telescope.actions").move_selection_next, -- scroll the list with <c-j>
                 ["<C-k>"] = require("telescope.actions").move_selection_previous, -- scroll the list with <c-k>
                 ["<C-b>"] = actions.select_horizontal, -- open selection in new horizantal split
                 ["<C-v>"] = actions.select_vertical, -- open selection in new vertical split
-            },
+                ["<c-x>"] = open_with_trouble,
+            }, 
         },
         prompt_prefix = "   ",
         selection_caret = "  ",
