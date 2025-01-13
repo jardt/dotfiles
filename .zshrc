@@ -15,12 +15,14 @@ export VISUAL="nvim"
 export EDITOR="nvim"
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+bindkey '^y' autosuggest-accept
 
 #zplug
 source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-history-substring-search", as:plugin, defer:3
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "Aloxaf/fzf-tab" 
 
 zplug "fdellwing/zsh-bat", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
@@ -76,4 +78,12 @@ alias fra="cd  ~/repos/fusion-resource-allocation-apps.git"
 
 path+=('/Users/jardar.ton/.dotnet/tools/')
 export PATH
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+alias ls='ls --color'
+
 
