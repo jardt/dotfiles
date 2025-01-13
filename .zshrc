@@ -86,4 +86,5 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 alias ls='ls --color'
 
+eval "$(zoxide init --cmd cd zsh)"
 
