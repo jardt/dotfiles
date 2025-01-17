@@ -1,0 +1,5 @@
+theme = catppuccin-macchiato
+font-family = Hack Nerd Font Mono Regular
+font-family-bold = Hack Nerd Font Bold 
+font-family-italic = Hack Nerd Font Italic 
+font-family-bold-italic = Hack Nerd Font Bold Italic

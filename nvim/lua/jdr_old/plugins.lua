@@ -1,5 +1,9 @@
 require("lazy").setup({
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000
+    },
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
@@ -10,29 +14,30 @@ require("lazy").setup({
         },
     },
     {
-        "nvim-treesitter/nvim-treesitter", 
-        build = ":TSUpdate",     
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
         version = false,
         init = function(plugin)
             require("lazy.core.loader").add_to_rtp(plugin)
             require("nvim-treesitter.query_predicates")
         end,
     },
-    {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-    {'williamboman/mason.nvim'},
-    {'williamboman/mason-lspconfig.nvim'},
-    {'neovim/nvim-lspconfig'},
-    {'hrsh7th/cmp-nvim-lsp'},
-    {'hrsh7th/nvim-cmp'},
-    {'hrsh7th/cmp-buffer'},
-    {'hrsh7th/cmp-path'},
-    {'L3MON4D3/LuaSnip'},
-    {"goolord/alpha-nvim",
+    { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
+    { 'neovim/nvim-lspconfig' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/nvim-cmp' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+    { 'L3MON4D3/LuaSnip' },
+    {
+        "goolord/alpha-nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
-    {"ThePrimeagen/harpoon"},
-    {"lewis6991/gitsigns.nvim"},
-    {"mbbill/undotree"},
+    { "ThePrimeagen/harpoon" },
+    { "lewis6991/gitsigns.nvim" },
+    { "mbbill/undotree" },
     {
         "hrsh7th/nvim-cmp",
         dependencies = {
@@ -53,9 +58,9 @@ require("lazy").setup({
             "nvimdev/guard-collection",
         },
     },
-    {"tpope/vim-fugitive"},
-    {"sindrets/diffview.nvim"},
-    {"nvim-lualine/lualine.nvim"},
+    { "tpope/vim-fugitive" },
+    { "sindrets/diffview.nvim" },
+    { "nvim-lualine/lualine.nvim" },
     {
         "folke/trouble.nvim",
         opts = {}, -- for default options, refer to the configuration section for custom setup.
@@ -93,7 +98,7 @@ require("lazy").setup({
             },
         },
     },
-    {"nvimdev/lspsaga.nvim"},
+    { "nvimdev/lspsaga.nvim" },
     {
         'tzachar/local-highlight.nvim',
     },
@@ -105,8 +110,8 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
-    { 'christoomey/vim-tmux-navigator'},
-    {'ThePrimeagen/vim-be-good'},
+    { 'christoomey/vim-tmux-navigator' },
+    { 'ThePrimeagen/vim-be-good' },
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -147,7 +152,7 @@ require("lazy").setup({
         }
     },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-    {"thePrimeagen/git-worktree.nvim"},
+    { "thePrimeagen/git-worktree.nvim" },
     {
         "mikavilpas/yazi.nvim",
         event = "VeryLazy",
@@ -162,7 +167,7 @@ require("lazy").setup({
                 -- Open in the current working directory
                 "<leader>Y",
                 "<cmd>Yazi cwd<cr>",
-                desc = "Open the file manager in nvim's working directory" ,
+                desc = "Open the file manager in nvim's working directory",
             },
             {
                 -- NOTE: this requires a version of yazi that includes
@@ -192,7 +197,7 @@ require("lazy").setup({
     },
     {
         "epwalsh/obsidian.nvim",
-        version = "*",  -- recommended, use latest release instead of latest commit
+        version = "*", -- recommended, use latest release instead of latest commit
         lazy = true,
         ft = "markdown",
         -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
