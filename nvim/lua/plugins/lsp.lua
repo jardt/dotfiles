@@ -9,6 +9,7 @@ return { {
         'williamboman/mason-lspconfig.nvim',
         config = function()
             local installed_lsp = { "lua_ls", "rust_analyzer", "ts_ls", "yamlls", "jsonls", "gopls" }
+            vim.lsp.inlay_hint.enable()
             vim.api.nvim_create_autocmd('LspAttach', {
                 desc = 'LSP actions',
                 callback = function(event)
@@ -35,6 +36,10 @@ return { {
                     end, opts)
                     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
                     vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts)
+                    vim.keymap.set("n", '<leader>i',
+                        function()
+                            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+                        end)
                     --vim.keymap.set("n", "<space>cA", vim.lsp.buf.range_code_action, opts)
                 end
             })
@@ -44,18 +49,29 @@ return { {
                 ensure_installed = installed_lsp,
                 handlers = {
                     function(server_name)
-                        require('lspconfig')[server_name].setup({
-                            capabilities = lsp_capabilities,
-                        })
+                        -- rustacians plugin handles rust lsp
+                        if (server_name ~= 'rust_analyzer')
+                        then
+                            require('lspconfig')[server_name].setup({
+                                capabilities = lsp_capabilities,
+                            })
+                        end
                     end,
                 },
             })
         end,
     },
-    { 'neovim/nvim-lspconfig' },
+    {
+        'neovim/nvim-lspconfig',
+    },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp' },
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/cmp-path' },
+    {
+        "chrisgrieser/nvim-lsp-endhints",
+        event = "LspAttach",
+        opts = {}, -- required, even if empty
+    },
     { 'L3MON4D3/LuaSnip' },
 } }

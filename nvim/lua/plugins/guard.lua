@@ -12,6 +12,7 @@ return {
 
             -- jft('typescriptreact,javascript,typescript'):lint("eslint_d"):fmt('prettier')
             ft('typescript,javascript,typescriptreact'):fmt('prettier'):lint('eslint_d')
+            ft('rust'):fmt('rustfmt')
             -- Call setup() LAST!
 
             vim.g.guard_config = {
@@ -22,7 +23,7 @@ return {
                 -- whether or not to save the buffer after formatting
                 save_on_fmt = true,
                 -- automatic linting
-                auto_lint = true,
+                -- auto_lint = true,
                 -- how frequently can linters be called
                 lint_interval = 500
             }
