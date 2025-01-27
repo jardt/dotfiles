@@ -33,6 +33,7 @@ return { {
                 { name = "nvim_lsp" },
                 { name = "nvim_lua" },
                 { name = "nvim_lsp_signature_help" },
+                { name = 'render-markdown' },
                 { name = "buffer",                 keyword_length = 5, max_item_count = 5 },
                 { name = "path" },
                 { name = 'nerdfont' }
@@ -49,7 +50,10 @@ return { {
                             return vim_item
                         end
                     end
-                    return require('lspkind').cmp_format({ with_text = true })(entry, vim_item)
+                    return require('lspkind').cmp_format({
+                        with_text = true,
+                        show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+                    })(entry, vim_item)
                 end
             },
 
@@ -79,7 +83,6 @@ return { {
             --          -- ...
             --          return vim_item
             --      end,
-            --      show_labelDetails = true, -- show labelDetails in menu. Disabled by default
             --  }),
             --  },
             experimental = { native_menu = false, ghost_text = { enabled = true } },

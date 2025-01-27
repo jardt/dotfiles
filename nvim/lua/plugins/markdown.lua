@@ -10,7 +10,7 @@ return { {
     {
         "epwalsh/obsidian.nvim",
         version = "*", -- recommended, use latest release instead of latest commit
-        enabled = false,
+        enabled = true,
         lazy = true,
         ft = "markdown",
         -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
@@ -26,15 +26,75 @@ return { {
             "nvim-lua/plenary.nvim",
         },
         opts = {
+            ui = { enable = false },
             workspaces = {
                 {
-                    name = "personal",
-                    path = "~/vaults/personal",
+                    name = "master",
+                    path = "/Users/jardar/Library/Mobile Documents/iCloud~md~obsidian/Documents/master",
                 },
                 {
-                    name = "work",
-                    path = "~/vaults/work",
+                    name = "audit",
+                    path = "/Users/jardar/Library/Mobile Documents/iCloud~md~obsidian/Documents/audit",
                 },
+            },
+            -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
+            completion = {
+                -- Set to false to disable completion.
+                nvim_cmp = true,
+                -- Trigger completion at 2 chars.
+                min_chars = 2,
+            },
+
+            -- Optional, configure key mappings. These are the defaults. If you don't want to set any keymappings this
+            -- way then set 'mappings = {}'.
+            mappings = {
+                -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
+                ["gd"] = {
+                    action = function()
+                        return require("obsidian").util.gf_passthrough()
+                    end,
+                    opts = { noremap = false, expr = true, buffer = true },
+                },
+                -- Toggle check-boxes.
+                ["<leader>ch"] = {
+                    action = function()
+                        return require("obsidian").util.toggle_checkbox()
+                    end,
+                    opts = { buffer = true },
+                },
+                -- Smart action depending on context, either follow link or toggle checkbox.
+                ["<cr>"] = {
+                    action = function()
+                        return require("obsidian").util.smart_action()
+                    end,
+                    opts = { buffer = true, expr = true },
+                },
+                -- Smart action depending on context, either follow link or toggle checkbox.
+                ["<leader>N"] = {
+                    action = function()
+                        return '<cmd>ObsidianNew<cr>'
+                    end,
+                    opts = { buffer = true, expr = true },
+                },
+                ["<leader>fo"] = {
+                    action = function()
+                        return '<cmd>ObsidianOpen<cr>'
+                    end,
+                    opts = { buffer = true, expr = true },
+                },
+                ["<leader>fl"] = {
+                    action = function()
+                        return '<cmd>ObsidianLinks<cr>'
+                    end,
+                    opts = { buffer = true, expr = true },
+                },
+                ["<leader>gr"] = {
+                    action = function()
+                        return '<cmd>ObsidianBacklinks<cr>'
+                    end,
+                    opts = { buffer = true, expr = true },
+                }
+
             },
         },
     } }

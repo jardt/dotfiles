@@ -9,5 +9,5 @@ nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
 nnoremap <leader>d :RustLsp renderDiagnostic cycle<CR>
-nnoremap <leader>h :RustLsp explainError cycle<CR>
+nnoremap <leader>? :RustLsp explainError cycle<CR>
 ]])
