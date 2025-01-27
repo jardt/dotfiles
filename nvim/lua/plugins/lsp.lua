@@ -8,7 +8,7 @@ return { {
     {
         'williamboman/mason-lspconfig.nvim',
         config = function()
-            local installed_lsp = { "lua_ls", "rust_analyzer", "ts_ls", "yamlls", "jsonls", "gopls" }
+            local installed_lsp = { "lua_ls", "rust_analyzer", "ts_ls", "yamlls", "jsonls" }
             vim.lsp.inlay_hint.enable()
             vim.api.nvim_create_autocmd('LspAttach', {
                 desc = 'LSP actions',
