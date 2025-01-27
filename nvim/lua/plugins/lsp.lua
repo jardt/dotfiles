@@ -44,7 +44,8 @@ return { {
                 end
             })
 
-            local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
+            local lsp_capabilities = require('blink.cmp').get_lsp_capabilities()
+            -- local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
             require('mason-lspconfig').setup({
                 ensure_installed = installed_lsp,
                 handlers = {
@@ -64,14 +65,9 @@ return { {
     {
         'neovim/nvim-lspconfig',
     },
-    { 'hrsh7th/cmp-nvim-lsp' },
-    { 'hrsh7th/nvim-cmp' },
-    { 'hrsh7th/cmp-buffer' },
-    { 'hrsh7th/cmp-path' },
     {
         "chrisgrieser/nvim-lsp-endhints",
         event = "LspAttach",
         opts = {}, -- required, even if empty
     },
-    { 'L3MON4D3/LuaSnip' },
 } }

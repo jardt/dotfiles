@@ -1,12 +1,13 @@
-return { {
-    'MeanderingProgrammer/render-markdown.nvim',
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {},
-},
+return {
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+    },
     {
         "epwalsh/obsidian.nvim",
         version = "*", -- recommended, use latest release instead of latest commit
@@ -44,7 +45,7 @@ return { {
             -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
             completion = {
                 -- Set to false to disable completion.
-                nvim_cmp = true,
+                nvim_cmp = false,
                 -- Trigger completion at 2 chars.
                 min_chars = 2,
             },
@@ -101,4 +102,14 @@ return { {
 
             },
         },
-    } }
+        config = function(_, opts)
+            require("obsidian").setup(opts)
+
+            -- HACK: fix error, disable completion.nvim_cmp option, manually register sources
+            local cmp = require("cmp")
+            cmp.register_source("obsidian", require("cmp_obsidian").new())
+            cmp.register_source("obsidian_new", require("cmp_obsidian_new").new())
+            cmp.register_source("obsidian_tags", require("cmp_obsidian_tags").new())
+        end,
+    }
+}
