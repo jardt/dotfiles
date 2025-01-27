@@ -39,3 +39,5 @@ vim.opt.cursorline = true
 vim.opt.autoread = true
 
 vim.g.border_style = "rounded"
+
+vim.cmd("set clipboard=unnamed")

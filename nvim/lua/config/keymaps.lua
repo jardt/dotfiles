@@ -4,6 +4,8 @@ vim.cmd([[
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :bd<CR>
 nnoremap <leader>v :vs<CR>
+nnoremap <leader>a :b#<CR>
+
 
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz

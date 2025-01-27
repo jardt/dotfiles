@@ -29,13 +29,17 @@ return { {
             ui = { enable = false },
             workspaces = {
                 {
-                    name = "master",
-                    path = "/Users/jardar/Library/Mobile Documents/iCloud~md~obsidian/Documents/master",
+                    name = "notes",
+                    path = "/Users/jardar.ton/notes",
                 },
-                {
-                    name = "audit",
-                    path = "/Users/jardar/Library/Mobile Documents/iCloud~md~obsidian/Documents/audit",
-                },
+                -- {
+                --     name = "master",
+                --     path = "/Users/jardar/Library/Mobile Documents/iCloud~md~obsidian/Documents/master",
+                -- },
+                -- {
+                --     name = "audit",
+                --     path = "/Users/jardar/Library/Mobile Documents/iCloud~md~obsidian/Documents/audit",
+                -- },
             },
             -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
             completion = {
