@@ -1,4 +1,4 @@
-return { {
+return  {{
     "mikavilpas/yazi.nvim",
     event = "VeryLazy",
     keys = {
@@ -30,4 +30,4 @@ return { {
             show_help = '<f1>',
         },
     },
-} }
+}}

@@ -1,27 +1,52 @@
 return {
-    {
-        "ThePrimeagen/harpoon",
-        config = function()
-            require("telescope").load_extension('harpoon')
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		keys = function()
+			local keys = {
+				{
+					"<leader>m",
+					function()
+						require("harpoon"):list():add()
+					end,
+					desc = "Harpoon File",
+				},
+				{
+					"<leader>h",
+					function()
+						local harpoon = require("harpoon")
+						harpoon.ui:toggle_quick_menu(harpoon:list())
+					end,
+					desc = "Harpoon Quick Menu",
+				},
+				{
+					"<M-j>",
+					function()
+						local harpoon = require("harpoon")
+						harpoon:list():next()
+					end,
+					desc = "Harpoon next",
+				},
+				{
+					"<M-k>",
+					function()
+						local harpoon = require("harpoon")
+						harpoon:list():prev()
+					end,
+					desc = "Harpoon prev",
+				},
+			}
 
-
-            local harpoon = require("harpoon")
-            harpoon.setup({})
-
-            local mark = require("harpoon.mark")
-            local ui = require("harpoon.ui")
-
-            vim.keymap.set("n", "<leader>m", mark.add_file)
-            vim.keymap.set("n", "<leader>fh", ui.toggle_quick_menu)
-
-            vim.keymap.set("n", "<leader>hh", function() ui.nav_prev() end)
-            vim.keymap.set("n", "<leader>hl", function() ui.nav_next() end)
-            vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end)
-            vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end)
-            vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end)
-            vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end)
-            vim.keymap.set("n", "<leader>5", function() ui.nav_file(5) end)
-        end
-    },
-
+			for i = 1, 5 do
+				table.insert(keys, {
+					"<leader>" .. i,
+					function()
+						require("harpoon"):list():select(i)
+					end,
+					desc = "Harpoon to File " .. i,
+				})
+			end
+			return keys
+		end,
+	},
 }
