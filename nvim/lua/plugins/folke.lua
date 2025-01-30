@@ -8,23 +8,7 @@ return {
 				-- Load luvit types when the `vim.uv` word is found
 				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 				{ path = "snacks.nvim", words = { "Snacks" } },
-			},
-		},
-	},
-	{ -- optional blink completion source for require statements and module annotations
-		"saghen/blink.cmp",
-		opts = {
-			sources = {
-				-- add lazydev to your completion providers
-				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
-				providers = {
-					lazydev = {
-						name = "LazyDev",
-						module = "lazydev.integrations.blink",
-						-- make lazydev completions top priority (see `:h blink.cmp`)
-						score_offset = 100,
-					},
-				},
+				{ "nvim-dap-ui" },
 			},
 		},
 	},
@@ -222,8 +206,8 @@ return {
 					mode = { "n", "v" },
 					{ "<leader><tab>", group = "tabs" },
 					{ "<leader>c", group = "code" },
-					{ "<leader>d", group = "debug" },
-					{ "<leader>dp", group = "profiler" },
+					{ "<leader>D", group = "debug" },
+					{ "<leader>Dp", group = "profiler" },
 					{ "<leader>f", group = "file/find" },
 					{ "<leader>g", group = "git" },
 					{ "<leader>gh", group = "hunks" },

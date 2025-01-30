@@ -6,6 +6,7 @@ return {
 			{ "rafamadriz/friendly-snippets" },
 			{ "saghen/blink.compat" },
 		},
+		event = "InsertEnter",
 
 		-- use a release tag to download pre-built binaries
 		version = "*",
@@ -95,7 +96,10 @@ return {
 					},
 				},
 			},
-			signature = { enabled = true },
+			signature = {
+				enabled = true,
+				window = { border = "rounded" },
+			},
 		},
 		opts_extend = { "sources.default" },
 	},

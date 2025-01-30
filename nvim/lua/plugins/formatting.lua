@@ -1,7 +1,6 @@
 return {
 	{
 		"stevearc/conform.nvim",
-		lazy = true,
 		event = { "BufWritePre" },
 		cmd = { "ConformInfo" },
 		-- This will provide type hinting with LuaLS

@@ -1,4 +1,5 @@
 return { {
-    'tzachar/local-highlight.nvim',
-    opts = {}
+	"tzachar/local-highlight.nvim",
+	event = "BufRead",
+	opts = {},
 } }

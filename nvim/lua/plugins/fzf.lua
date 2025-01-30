@@ -1,7 +1,7 @@
 return {
 	{
 		"ibhagwan/fzf-lua",
-		cmd = "FzfLua",
+		event = "VeryLazy",
 		dependencies = { "echasnovski/mini.icons" },
 		opts = function()
 			local fzf = require("fzf-lua")
@@ -124,7 +124,23 @@ return {
 				end,
 				desc = "Goto Symbol (Workspace)",
 			},
+			-- dap
+			{ "<leader>DD", "<cmd>FzfLua dap_commands<cr>", desc = "dap commands" },
+			{ "<leader>DDb", "<cmd>FzfLua dap_breakpoints<cr>", desc = "dap commands" },
+			{ "<leader>DDv", "<cmd>dap_variables<cr>", desc = "dap commands" },
+
+			-- spelling
 			{ "<leader>=", "<cmd>FzfLua spell_suggest<cr>", desc = "Spelling suggestions" },
+
+			{
+				"<leader>/",
+				function()
+					require("fzf-lua").live_grep_native({
+						multiprocess = true,
+						rg_opts = [=[--column --line-number --hidden --no-heading --color=always --smart-case --max-columns=4096 -g '!.git' -e]=],
+					})
+				end,
+			},
 		},
 	},
 }
