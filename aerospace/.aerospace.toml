@@ -178,13 +178,12 @@ cmd-shift-space = 'move-workspace-to-monitor --wrap-around next'
 cmd-shift-semicolon = 'mode service'
 cmd-shift-enter = 'mode apps'
 
-cmd-f = 'exec-and-forget open -a /Applications/Firefox\ Developer\ Edition.app'
+cmd-b = 'exec-and-forget open -a /Applications/Firefox\ Developer\ Edition.app'
 cmd-o = 'exec-and-forget open -a /Applications/Obsidian.app'
 cmd-g = 'exec-and-forget open -a /Applications/Ghostty.app'
 cmd-s = 'exec-and-forget open -a /Applications/Safari.app'
 cmd-m = 'exec-and-forget open -a /Applications/Spotify.app'
 cmd-t = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app'
-cmd-n = 'exec-and-forget open -a /Applications/Docker.app'
 
 
 # 'service' binding mode declaration.
