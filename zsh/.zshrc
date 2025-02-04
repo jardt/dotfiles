@@ -70,6 +70,15 @@ esac
 # pnpm end
 
 
+## event for sketchybar
+function brew() {
+  command brew "$@" 
+
+  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+    sketchybar --trigger brew_update
+  fi
+}
+
 
 #custom
 . "$HOME/.cargo/env"
