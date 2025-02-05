@@ -1,6 +1,6 @@
 theme = catppuccin-macchiato
-font-family = CaskaydiaCove NFM SemiBold
-font-family-bold = CaskaydiaCove NFM Bold
+font-family = CaskaydiaCove NFM Regular
+font-family-bold = CaskaydiaCove NFM SemiBold
 font-family-italic = CaskaydiaCove NFM Italic
 font-family-bold-italic = CaskaydiaCove NFM Bold Italic 
 font-thicken = true
