@@ -15,6 +15,7 @@ return {
 			config.defaults.keymap.fzf["ctrl-u"] = "preview-page-up"
 			config.defaults.keymap.builtin["<c-d>"] = "preview-page-down"
 			config.defaults.keymap.builtin["<c-u>"] = "preview-page-up"
+			config.defaults.keymap.fzf["ctrl-q"] = "select-all+accept"
 
 			return {
 				"default-title",
@@ -28,12 +29,11 @@ return {
 				},
 				actions = {
 					files = {
-						["default"] = actions.file_edit,
+						["default"] = actions.file_edit_or_qf,
 						["ctrl-y"] = actions.file_edit,
 						["ctrl-b"] = actions.file_split,
 						["ctrl-v"] = actions.file_vsplit,
 						["ctrl-t"] = actions.file_tabedit,
-						["ctrl-q"] = actions.file_sel_to_qf,
 					},
 				},
 				winopts = {
