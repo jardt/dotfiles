@@ -2,6 +2,10 @@ vim.keymap.set("n", "<leader>cr", function()
 	vim.cmd.RustLsp("codeAction")
 end, { desc = "Code Action rust" })
 
+vim.keymap.set("n", "<leader>p", function()
+	vim.cmd(':normal "0p')
+end, { desc = "Code Action rust" })
+
 vim.keymap.set("n", "<leader>w", function()
 	vim.cmd(":w")
 end, { desc = "write file" })
