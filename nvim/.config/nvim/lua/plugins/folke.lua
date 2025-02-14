@@ -143,6 +143,13 @@ return {
 			routes = {
 				{
 					filter = {
+						event = "notify",
+						find = "Request textDocument/documentHighlight",
+					},
+					opts = { skip = true },
+				},
+				{
+					filter = {
 						event = "msg_show",
 						any = {
 							{ find = "%d+L, %d+B" },

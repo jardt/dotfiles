@@ -1,0 +1,290 @@
+return {
+	{
+		"williamboman/mason.nvim",
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+		},
+	},
+	{
+		"neovim/nvim-lspconfig",
+		opts = function()
+			---@class PluginLspOpts
+			local ret = {
+				-- options for vim.diagnostic.config()
+				---@type vim.diagnostic.Opts
+				diagnostics = {
+					underline = true,
+					update_in_insert = false,
+					virtual_text = {
+						spacing = 4,
+						source = "if_many",
+						prefix = "●",
+						-- this will set set the prefix to a function that returns the diagnostics icon based on the severity
+						-- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
+						-- prefix = "icons",
+					},
+					severity_sort = true,
+				},
+				inlay_hints = {
+					enabled = false,
+					exclude = { "svelte" }, -- filetypes for which you don't want to enable inlay hints
+				},
+				codelens = {
+					enabled = true,
+				},
+				capabilities = {
+					workspace = {
+						fileOperations = {
+							didRename = true,
+							willRename = true,
+						},
+					},
+				},
+				-- LSP Server Settings
+				---@type lspconfig.options
+				servers = {
+					lua_ls = {
+						-- mason = false, -- set to false if you don't want this server to be installed with mason
+						-- Use this to add any additional keymaps
+						-- for specific lsp servers
+						-- ---@type LazyKeysSpec[]
+						-- keys = {},
+						settings = {
+							Lua = {
+								workspace = {
+									checkThirdParty = false,
+								},
+								codeLens = {
+									enable = true,
+								},
+								completion = {
+									callSnippet = "Replace",
+								},
+								doc = {
+									privateName = { "^_" },
+								},
+								hint = {
+									enable = true,
+									setType = false,
+									paramType = true,
+									paramName = "Disable",
+									semicolon = "Disable",
+									arrayIndex = "Disable",
+								},
+							},
+						},
+					},
+				},
+				-- you can do any additional lsp server setup here
+				-- return true if you don't want this server to be setup with lspconfig
+				---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
+				setup = {
+					-- example to setup with typescript.nvim
+					-- tsserver = function(_, opts)
+					--   require("typescript").setup({ server = opts })
+					--   return true
+					-- end,
+					-- Specify * to use this function as a fallback for any server
+					-- ["*"] = function(server, opts) end,
+				},
+			}
+			return ret
+		end,
+		config = function()
+			require("mason").setup()
+			local ensure_installed = {
+				"bashls",
+				"marksman",
+				"vtsls",
+				"svelte",
+				"rust_analyzer",
+				"jsonls",
+				"html",
+				"cssls",
+				"lua_ls",
+				"tailwindcss",
+				"yamlls",
+				"gopls",
+				"solidity_ls_nomicfoundation",
+				"taplo",
+			}
+
+			vim.lsp.inlay_hint.enable()
+			vim.api.nvim_create_autocmd("LspAttach", {
+				desc = "LSP actions",
+				callback = function(event)
+					local opts = { buffer = event.buf }
+
+					-- these will be buffer-local keybindings
+					-- because they only work if you have an active language server
+					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+					vim.keymap.set(
+						"n",
+						"gd",
+						"<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>",
+						opts
+					)
+					vim.keymap.set(
+						"n",
+						"gr",
+						"<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<cr>",
+						opts
+					)
+					vim.keymap.set(
+						"n",
+						"gI",
+						"<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>",
+						opts
+					)
+					vim.keymap.set(
+						"n",
+						"gt",
+						"<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<cr>",
+						opts
+					)
+					vim.keymap.set("n", "gh", vim.lsp.buf.signature_help, opts)
+					vim.keymap.set(
+						"n",
+						"<space>Wa",
+						vim.lsp.buf.add_workspace_folder,
+						{ desc = "add workspace folder", buffer = event.buf }
+					)
+					vim.keymap.set(
+						"n",
+						"<space>Wr",
+						vim.lsp.buf.remove_workspace_folder,
+						{ desc = "remove workspace folder", buffer = event.buf }
+					)
+					vim.keymap.set("n", "<space>ca", function()
+						require("fzf-lua").lsp_code_actions({
+							winopts = {
+								relative = "cursor",
+								width = 0.6,
+								height = 0.6,
+								row = 1,
+								preview = { vertical = "up:70%" },
+							},
+						})
+					end, opts)
+					vim.keymap.set("n", "<space>Wl", function()
+						print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+					end, { desc = "List workspace folder", buffer = event.buf })
+					vim.keymap.set("n", "<leader>i", function()
+						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
+					end, { desc = "toggle inlay hints" })
+				end,
+			})
+
+			local lsp_capabilities = require("blink.cmp").get_lsp_capabilities()
+			local lspconfig = require("lspconfig")
+			require("mason-lspconfig").setup({
+				ensure_installed = ensure_installed,
+				handlers = {
+					function(server_name)
+						require("lspconfig")[server_name].setup({
+							capabilities = lsp_capabilities,
+						})
+					end,
+					["rust_analyzer"] = function() end,
+					["lua_ls"] = function()
+						lspconfig.lua_ls.setup({
+							commands = {
+								Format = {
+									function()
+										vim.lsp.buf.format()
+									end,
+								},
+							},
+							capabilities = lsp_capabilities,
+							settings = {
+								Lua = {
+									runtime = {
+										version = "LuaJIT",
+									},
+									diagnostics = {
+										globals = { "vim" },
+									},
+									workspace = {
+										library = vim.api.nvim_get_runtime_file("", true),
+										checkThirdParty = false,
+									},
+									telemetry = {
+										enable = false,
+									},
+								},
+							},
+						})
+					end,
+					["svelte"] = function()
+						lspconfig.svelte.setup({
+							on_attach = on_attach,
+							flags = lsp_flags,
+							capabilities = lsp_capabilities,
+							workspace = {
+								didChangeWatchedFiles = vim.fn.has("nvim-0.10") == 0 and { dynamicRegistration = true },
+							},
+						})
+						vim.g.vim_svelte_plugin_use_typescript = 1
+					end,
+					["vtsls"] = function()
+						lspconfig.vtsls.setup({
+							filetypes = {
+								"svelte",
+								"javascript",
+								"javascriptreact",
+								"javascript.jsx",
+								"typescript",
+								"typescriptreact",
+								"typescript.tsx",
+							},
+							capabilities = lsp_capabilities,
+							settings = {
+								complete_function_calls = true,
+								vtsls = {
+									enableMoveToFileCodeAction = true,
+									autoUseWorkspaceTsdk = true,
+									experimental = {
+										maxInlayHintLength = 30,
+										completion = {
+											enableServerSideFuzzyMatch = true,
+										},
+									},
+								},
+								typescript = {
+									updateImportsOnFileMove = { enabled = "always" },
+									suggest = {
+										completeFunctionCalls = true,
+									},
+									inlayHints = {
+										enumMemberValues = { enabled = true },
+										functionLikeReturnTypes = { enabled = true },
+										parameterNames = { enabled = "literals" },
+										parameterTypes = { enabled = true },
+										propertyDeclarationTypes = { enabled = true },
+										variableTypes = { enabled = false },
+									},
+								},
+							},
+						})
+					end,
+
+					-- rustacians plugin handles rust lsp
+					--	if server_name ~= "rust_analyzer" then
+					--	end
+				},
+			})
+
+			local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+			for type, icon in pairs(signs) do
+				local hl = "DiagnosticSign" .. type
+				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+			end
+		end,
+	},
+	{
+		"chrisgrieser/nvim-lsp-endhints",
+		event = "LspAttach",
+		opts = {}, -- required, even if empty
+	},
+}

@@ -51,7 +51,7 @@ return {
 						},
 					},
 				},
-				extensions = { "neo-tree", "lazy" },
+				extensions = { "neo-tree", "lazy", "quickfix", "nvim-dap-ui", "trouble", "mason", "fzf" },
 			}
 		end,
 	},
