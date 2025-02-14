@@ -60,7 +60,7 @@ return {
 				},
 				inlay_hints = {
 					enabled = true,
-					exclude = { "svelte" }, -- filetypes for which you don't want to enable inlay hints
+					exclude = {}, -- filetypes for which you don't want to enable inlay hints
 				},
 				capabilities = {
 					workspace = {
@@ -86,11 +86,7 @@ return {
 					taplo = {},
 					html = {},
 					cssls = {},
-					tailwindcss = {
-						root_dir = function(...)
-							return require("lspconfig.util").root_pattern(".git")(...)
-						end,
-					},
+					tailwindcss = {},
 					lua_ls = {
 						settings = {
 							Lua = {
