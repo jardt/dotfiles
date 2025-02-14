@@ -37,6 +37,7 @@ zplug "plugins/rustup", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 
+
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -44,15 +45,9 @@ if ! zplug check --verbose; then
     fi
 fi
 
+
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
-
-#asdf
-. "$HOME/.asdf/asdf.sh"
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-# initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
 
 # bun completions
 [ -s "/Users/jardar.ton/.bun/_bun" ] && source "/Users/jardar.ton/.bun/_bun"
@@ -79,11 +74,13 @@ function brew() {
   fi
 }
 
-
 #custom
 . "$HOME/.cargo/env"
 
 alias fra="cd  ~/repos/fusion-resource-allocation-apps.git"
+
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 path+=('/Users/jardar.ton/.dotnet/tools/')
 export PATH
