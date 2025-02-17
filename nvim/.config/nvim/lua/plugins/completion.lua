@@ -78,6 +78,11 @@ return {
 					"ripgrep",
 				},
 				providers = {
+					lsp = {
+						name = "LSP",
+						module = "blink.cmp.sources.lsp",
+						score_offset = 0, -- Boost/penalize the score of the items
+					},
 					ripgrep = {
 						module = "blink-ripgrep",
 						name = "Ripgrep",

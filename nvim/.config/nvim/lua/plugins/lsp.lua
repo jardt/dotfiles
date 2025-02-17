@@ -193,30 +193,15 @@ return {
 					-- because they only work if you have an active language server
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-					vim.keymap.set(
-						"n",
-						"gd",
-						"<cmd>FzfLua lsp_definitions jump_to_single_result=true ignore_current_line=true<cr>",
-						opts
-					)
-					vim.keymap.set(
-						"n",
-						"gr",
-						"<cmd>FzfLua lsp_references jump_to_single_result=true ignore_current_line=true<cr>",
-						opts
-					)
+					vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions jump1 ignore_current_line=true<cr>", opts)
+					vim.keymap.set("n", "gr", "<cmd>FzfLua lsp_references jump1 ignore_current_line=true<cr>", opts)
 					vim.keymap.set(
 						"n",
 						"gI",
-						"<cmd>FzfLua lsp_implementations jump_to_single_result=true ignore_current_line=true<cr>",
+						"<cmd>FzfLua lsp_implementations jump1 ignore_current_line=true<cr>",
 						opts
 					)
-					vim.keymap.set(
-						"n",
-						"gt",
-						"<cmd>FzfLua lsp_typedefs jump_to_single_result=true ignore_current_line=true<cr>",
-						opts
-					)
+					vim.keymap.set("n", "gt", "<cmd>FzfLua lsp_typedefs jump1 ignore_current_line=true<cr>", opts)
 					vim.keymap.set("n", "gh", vim.lsp.buf.signature_help, opts)
 					vim.keymap.set(
 						"n",

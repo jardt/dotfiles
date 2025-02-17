@@ -5,7 +5,7 @@ return {
 		priority = 1001,
 		lazy = false,
 		config = {
-			flavour = "macchiato", -- latte, frappe, macchiato, mocha
+			flavour = "mocha", -- latte, frappe, macchiato, mocha
 			dim_inactive = { enabled = true, shade = "dark", percentage = 0.15 },
 			transparent_background = true,
 			no_italic = false, -- Force no italic
@@ -66,7 +66,7 @@ return {
 			},
 		},
 		init = function()
-			vim.cmd([[colorscheme catppuccin-macchiato]])
+			vim.cmd([[colorscheme catppuccin-mocha]])
 		end,
 	},
 }
