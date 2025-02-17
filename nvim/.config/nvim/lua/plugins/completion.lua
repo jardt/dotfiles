@@ -4,7 +4,8 @@ return {
 		-- optional: provides snippets for the snippet source
 		dependencies = {
 			{ "rafamadriz/friendly-snippets" },
-			{ "saghen/blink.compat" },
+			{ "saghen/blink.compat", version = "*", opts = { impersonate_nvim_cmp = true } },
+			{ "mikavilpas/blink-ripgrep.nvim" },
 		},
 		event = "InsertEnter",
 
@@ -74,9 +75,19 @@ return {
 					"obsidian_new",
 					"obsidian_tags",
 					"lazydev",
+					"ripgrep",
 				},
 				providers = {
-
+					ripgrep = {
+						module = "blink-ripgrep",
+						name = "Ripgrep",
+						opts = {
+							prefix_min_len = 3,
+							context_size = 5,
+							max_filesize = "1M",
+							additional_rg_options = {},
+						},
+					},
 					lazydev = {
 						name = "LazyDev",
 						module = "lazydev.integrations.blink",

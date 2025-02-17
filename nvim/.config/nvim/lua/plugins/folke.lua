@@ -101,7 +101,7 @@ return {
 				end,
 				desc = "Todo/Fix/Fixme",
 			},
-			{ "<leader>tq", "<cmd>TodoQuickFix<cr>", desc = "TODO Quickfix" },
+			{ "<leader>Tq", "<cmd>TodoQuickFix<cr>", desc = "TODO Quickfix" },
 			{
 				"]t",
 				function()
