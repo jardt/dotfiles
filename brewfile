@@ -19,6 +19,7 @@ brew "yazi"
 brew "zoxide"
 brew "zsh-history-substring-search"
 brew "zstd"
+brew "fd"
 
 cask "firefox"
 cask "google-chrome"

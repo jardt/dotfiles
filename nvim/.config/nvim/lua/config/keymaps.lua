@@ -1,56 +1,70 @@
-vim.keymap.set("n", "<leader>cr", function()
-	vim.cmd.RustLsp("codeAction")
-end, { desc = "Code Action rust" })
+local map = vim.keymap.set
 
-vim.keymap.set("n", "<leader>p", function()
+map("n", "<leader>p", function()
 	vim.cmd(':normal "0p')
 end, { desc = "Code Action rust" })
 
-vim.keymap.set("n", "<leader>w", function()
+map("n", "<leader>w", function()
 	vim.cmd(":w")
 end, { desc = "write file" })
 
-vim.keymap.set("n", "<leader>dd", function()
+map("n", "<leader>dd", function()
 	vim.cmd(":bd")
 end, { desc = "buffer close" })
 
-vim.keymap.set("n", "<leader>a", function()
+map("n", "<leader>a", function()
 	vim.cmd(":b#")
 end, { desc = "alernate file" })
 
-vim.keymap.set("n", "<leader>v", function()
+map("n", "<leader>v", function()
 	vim.cmd(":vs")
 end, { desc = "vertical split" })
 
-vim.keymap.set("n", "<leader>re", function()
+map("i", "jj", "<Esc>")
+
+map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
+map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
+-- quit
+map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+
+-- save file
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+
+-- #### RUST
+
+map("n", "<leader>cr", function()
+	vim.cmd.RustLsp("codeAction")
+end, { desc = "Code Action rust" })
+
+map("n", "<leader>re", function()
 	vim.cmd(":RustLsp renderDiagnostic current")
 end, { desc = "rust diagnostic" })
 
-vim.keymap.set("n", "<leader>rr", function()
+map("n", "<leader>rr", function()
 	vim.cmd(":RustLsp relatedDiagnostics")
 end, { desc = "rust related diagnostic" })
 
-vim.keymap.set("n", "<leader>rE", function()
+map("n", "<leader>rE", function()
 	vim.cmd(":RustLsp renderDiagnostic cycle")
 end, { desc = "rust diagnostic" })
 
-vim.keymap.set("n", "<leader>rh", function()
+map("n", "<leader>rh", function()
 	vim.cmd(":RustLsp explainError current")
 end, { desc = "rust explainError" })
 
-vim.keymap.set("n", "<leader>rH", function()
+map("n", "<leader>rH", function()
 	vim.cmd(":RustLsp explainError cycle")
 end, { desc = "rust explainError" })
 
-vim.keymap.set("n", "<leader>rt", function()
+map("n", "<leader>rt", function()
 	vim.cmd(":RustLsp testables ")
 end, { desc = "rust run tests" })
 
-vim.keymap.set("n", "<leader>rD", function()
+map("n", "<leader>rD", function()
 	vim.cmd(":RustLsp debuggables")
 end, { desc = "rust run debug" })
 
-vim.keymap.set("n", "<leader>ro", function()
+map("n", "<leader>ro", function()
 	vim.cmd(":RustLsp openDocs")
 end, { desc = "rust open docs" })
 

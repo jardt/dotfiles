@@ -13,4 +13,5 @@ return {
 			}
 		end,
 	},
+	{ "cordx56/rustowl", lazy = true, dependencies = { "neovim/nvim-lspconfig" } },
 }
