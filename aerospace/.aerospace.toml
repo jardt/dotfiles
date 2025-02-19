@@ -112,69 +112,65 @@ outer.right = 10
 # end tell'
 # '''
 
-cmd-ctrl-f = 'fullscreen --no-outer-gaps'
-cmd-ctrl-t = 'layout floating tiling'
+ctrl-shift-alt-f = 'fullscreen --no-outer-gaps'
+ctrl-shift-alt-r = 'layout floating tiling'
 
-cmd-shift-left = 'join-with left'
-cmd-shift-down = 'join-with down'
-cmd-shift-up = 'join-with up'
-cmd-shift-right = 'join-with right'
+ctrl-shift-alt-shift-left = 'join-with left'
+ctrl-shift-alt-shift-down = 'join-with down'
+ctrl-shift-alt-shift-up = 'join-with up'
+ctrl-shift-alt-shift-right = 'join-with right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#layout
-cmd-period = 'layout tiles horizontal vertical'
-cmd-comma = 'layout accordion horizontal vertical'
+ctrl-shift-alt-period = 'layout tiles horizontal vertical'
+ctrl-shift-alt-comma = 'layout accordion horizontal vertical'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus
-cmd-h = 'focus left'
-cmd-j = 'focus down'
-cmd-k = 'focus up'
-cmd-l = 'focus right'
+ctrl-shift-alt-h = 'focus left'
+ctrl-shift-alt-j = 'focus down'
+ctrl-shift-alt-k = 'focus up'
+ctrl-shift-alt-l = 'focus right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
-cmd-shift-h = 'move left'
-cmd-shift-j = 'move down'
-cmd-shift-k = 'move up'
-cmd-shift-l = 'move right'
+ctrl-shift-alt-cmd-h = 'move left'
+ctrl-shift-alt-cmd-j = 'move down'
+ctrl-shift-alt-cmd-k = 'move up'
+ctrl-shift-alt-cmd-l = 'move right'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#resize
-cmd-shift-minus = 'resize smart -50'
-cmd-shift-equal = 'resize smart +50'
+ctrl-shift-alt-minus = 'resize smart -50'
+ctrl-shift-alt-equal = 'resize smart +50'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-cmd-1 = 'workspace 1'
-cmd-2 = 'workspace 2'
-cmd-3 = 'workspace 3'
-cmd-4 = 'workspace 4'
-cmd-5 = 'workspace 5'
-cmd-6 = 'workspace 6'
-cmd-7 = 'workspace 7'
-cmd-8 = 'workspace 8'
-cmd-9 = 'workspace 9'
+ctrl-shift-alt-1 = 'workspace 1'
+ctrl-shift-alt-2 = 'workspace 2'
+ctrl-shift-alt-3 = 'workspace 3'
+ctrl-shift-alt-4 = 'workspace 4'
+ctrl-shift-alt-5 = 'workspace 5'
+ctrl-shift-alt-6 = 'workspace 6'
+ctrl-shift-alt-7 = 'workspace 7'
+ctrl-shift-alt-8 = 'workspace 8'
+ctrl-shift-alt-9 = 'workspace 9'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-cmd-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
-cmd-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
-cmd-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
-cmd-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
-cmd-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
-cmd-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
+ctrl-shift-alt-cmd-1 = 'move-node-to-workspace 1 --focus-follows-window'
+ctrl-shift-alt-cmd-2 = 'move-node-to-workspace 2 --focus-follows-window'
+ctrl-shift-alt-cmd-3 = 'move-node-to-workspace 3 --focus-follows-window'
+ctrl-shift-alt-cmd-4 = 'move-node-to-workspace 4 --focus-follows-window'
+ctrl-shift-alt-cmd-5 = 'move-node-to-workspace 5 --focus-follows-window'
+ctrl-shift-alt-cmd-6 = 'move-node-to-workspace 6 --focus-follows-window'
+ctrl-shift-alt-cmd-7 = 'move-node-to-workspace 7 --focus-follows-window'
+ctrl-shift-alt-cmd-8 = 'move-node-to-workspace 8 --focus-follows-window'
+ctrl-shift-alt-cmd-9 = 'move-node-to-workspace 9 --focus-follows-window'
 
-cmd-space = 'workspace-back-and-forth'
-cmd-shift-space = 'move-workspace-to-monitor --wrap-around next'
+ctrl-shift-alt-a = 'workspace-back-and-forth'
+ctrl-shift-alt-space = 'move-workspace-to-monitor --wrap-around next'
 
-# See: https://nikitabobko.github.io/AeroSpace/commands#mode
-cmd-shift-semicolon = 'mode service'
-cmd-shift-enter = 'mode apps'
+ctrl-shift-alt-semicolon = 'mode service'
+ctrl-shift-alt-enter = 'mode apps'
 
-cmd-b = 'exec-and-forget open -a /Applications/Firefox\ Developer\ Edition.app'
-cmd-o = 'exec-and-forget open -a /Applications/Obsidian.app -a /Applications/Microsoft\ Outlook.app'
-#cmd-c = 'exec-and-forget open -a /Applications/Google\ Chrome.app/'
-cmd-g = 'exec-and-forget open -a /Applications/Ghostty.app'
-cmd-s = 'exec-and-forget open -a /Applications/Discord.app -a /Applications/Slack.app'
-cmd-m = 'exec-and-forget open -a /Applications/Spotify.app'
-cmd-t = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app '
-#cmd-f = 'exec-and-forget open -a /Applications/Figma.app'
-#cmd-v = 'exec-and-forget open -a /Applications/Visual Studio Code.app'
+ctrl-shift-alt-b = 'exec-and-forget open -a /Applications/Firefox\ Developer\ Edition.app'
+ctrl-shift-alt-o = 'exec-and-forget open -a /Applications/Obsidian.app -a /Applications/Microsoft\ Outlook.app'
+ctrl-shift-alt-c = 'exec-and-forget open -a /Applications/Google\ Chrome.app/'
+ctrl-shift-alt-g = 'exec-and-forget open -a /Applications/Ghostty.app'
+ctrl-shift-alt-s = 'exec-and-forget open -a /Applications/Discord.app -a /Applications/Slack.app'
+ctrl-shift-alt-m = 'exec-and-forget open -a /Applications/Spotify.app'
+ctrl-shift-alt-t = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app '
+ctrl-shift-alt-d = 'exec-and-forget open -a /Applications/Figma.app'
+ctrl-shift-alt-v = 'exec-and-forget open -a /Applications/Visual Studio Code.app'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -192,35 +188,41 @@ backspace = ['close-all-windows-but-current', 'mode main']
 [[on-window-detected]]
 if.app-name-regex-substring = 'Teams'
 if.window-title-regex-substring = 'Teams'
+if.during-aerospace-startup = true
 check-further-callbacks = true
 run = ['move-node-to-workspace 9']        # The callback itself
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Slack'
 if.window-title-regex-substring = 'Slack'
+if.during-aerospace-startup = true
 check-further-callbacks = true
 run = ['move-node-to-workspace 8']        # The callback itself
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Outlook'
 if.window-title-regex-substring = 'Outlook'
+if.during-aerospace-startup = true
 check-further-callbacks = true
 run = ['move-node-to-workspace 8']          # The callback itself
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Figma'
 if.window-title-regex-substring = 'Figma'
+if.during-aerospace-startup = true
 check-further-callbacks = true
 run = ['move-node-to-workspace 7']        # The callback itself
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Ghostty'
 if.window-title-regex-substring = 'Ghostty'
+if.during-aerospace-startup = true
 check-further-callbacks = true
 run = ['move-node-to-workspace 1']          # The callback itself
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'firefox'
 if.window-title-regex-substring = 'firefox'
+if.during-aerospace-startup = true
 check-further-callbacks = true
 run = ['move-node-to-workspace 2']          # The callback itself
