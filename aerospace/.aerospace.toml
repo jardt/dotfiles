@@ -193,13 +193,13 @@ backspace = ['close-all-windows-but-current', 'mode main']
 if.app-name-regex-substring = 'Teams'
 if.window-title-regex-substring = 'Teams'
 check-further-callbacks = true
-run = ['layout floating', 'move-node-to-workspace 9'] # The callback itself
+run = ['move-node-to-workspace 9']        # The callback itself
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Slack'
 if.window-title-regex-substring = 'Slack'
 check-further-callbacks = true
-run = ['layout floating', 'move-node-to-workspace 8'] # The callback itself
+run = ['move-node-to-workspace 8']        # The callback itself
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Outlook'
