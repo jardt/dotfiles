@@ -49,25 +49,10 @@ automatically-unhide-macos-hidden-apps = false
 # check-further-callbacks = true
 # run = ['layout floating', 'move-node-to-workspace S']  # The callback itself
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'telegram'
-run = 'layout floating'
-
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'finder'
-# run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'camera'
 run = 'layout floating'
-
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'dicord'
-# run = 'layout floating'
-# 
-# [[on-window-detected]]
-# if.app-name-regex-substring = 'mail'
-# run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'trello'
@@ -136,7 +121,7 @@ cmd-shift-up = 'join-with up'
 cmd-shift-right = 'join-with right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-cmd-slash = 'layout tiles horizontal vertical'
+cmd-period = 'layout tiles horizontal vertical'
 cmd-comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
@@ -162,6 +147,9 @@ cmd-3 = 'workspace 3'
 cmd-4 = 'workspace 4'
 cmd-5 = 'workspace 5'
 cmd-6 = 'workspace 6'
+cmd-7 = 'workspace 7'
+cmd-8 = 'workspace 8'
+cmd-9 = 'workspace 9'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 cmd-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -179,12 +167,14 @@ cmd-shift-semicolon = 'mode service'
 cmd-shift-enter = 'mode apps'
 
 cmd-b = 'exec-and-forget open -a /Applications/Firefox\ Developer\ Edition.app'
-cmd-o = 'exec-and-forget open -a /Applications/Obsidian.app'
+cmd-o = 'exec-and-forget open -a /Applications/Obsidian.app -a /Applications/Microsoft\ Outlook.app'
+#cmd-c = 'exec-and-forget open -a /Applications/Google\ Chrome.app/'
 cmd-g = 'exec-and-forget open -a /Applications/Ghostty.app'
-cmd-s = 'exec-and-forget open -a /Applications/Safari.app'
+cmd-s = 'exec-and-forget open -a /Applications/Discord.app -a /Applications/Slack.app'
 cmd-m = 'exec-and-forget open -a /Applications/Spotify.app'
-cmd-t = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app'
-
+cmd-t = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app '
+#cmd-f = 'exec-and-forget open -a /Applications/Figma.app'
+#cmd-v = 'exec-and-forget open -a /Applications/Visual Studio Code.app'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -198,3 +188,39 @@ f = [
 backspace = ['close-all-windows-but-current', 'mode main']
 
 [mode.apps.binding]
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Teams'
+if.window-title-regex-substring = 'Teams'
+check-further-callbacks = true
+run = ['layout floating', 'move-node-to-workspace 9'] # The callback itself
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Slack'
+if.window-title-regex-substring = 'Slack'
+check-further-callbacks = true
+run = ['layout floating', 'move-node-to-workspace 8'] # The callback itself
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Outlook'
+if.window-title-regex-substring = 'Outlook'
+check-further-callbacks = true
+run = ['move-node-to-workspace 8']          # The callback itself
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Figma'
+if.window-title-regex-substring = 'Figma'
+check-further-callbacks = true
+run = ['move-node-to-workspace 7']        # The callback itself
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Ghostty'
+if.window-title-regex-substring = 'Ghostty'
+check-further-callbacks = true
+run = ['move-node-to-workspace 1']          # The callback itself
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'firefox'
+if.window-title-regex-substring = 'firefox'
+check-further-callbacks = true
+run = ['move-node-to-workspace 2']          # The callback itself
