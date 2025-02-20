@@ -1,0 +1,40 @@
+{
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Left cmd → Meh on tap",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "right_gui" },
+                                "to": [
+                                    {
+                                        "key_code": "left_option",
+                                        "modifiers": ["control", "shift"]
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "left_option",
+                                        "modifiers": ["control", "shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": "Default profile",
+            "selected": true,
+            "simple_modifications": [
+                {
+                    "from": { "key_code": "caps_lock" },
+                    "to": [{ "key_code": "left_control" }]
+                }
+            ],
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
