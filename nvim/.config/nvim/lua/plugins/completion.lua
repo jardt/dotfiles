@@ -6,6 +6,7 @@ return {
 			{ "rafamadriz/friendly-snippets" },
 			{ "saghen/blink.compat", version = "*", opts = { impersonate_nvim_cmp = true } },
 			{ "mikavilpas/blink-ripgrep.nvim" },
+			{ "L3MON4D3/LuaSnip", version = "v2.*" },
 		},
 		event = "InsertEnter",
 
@@ -65,17 +66,19 @@ return {
 
 			-- Default list of enabled providers defined so that you can extend it
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
+			--
+			snippets = { preset = "luasnip" },
 			sources = {
 				default = {
 					"lsp",
 					"path",
 					"snippets",
 					"buffer",
+					"ripgrep",
 					"obsidian",
 					"obsidian_new",
 					"obsidian_tags",
 					"lazydev",
-					"ripgrep",
 				},
 				providers = {
 					lsp = {
