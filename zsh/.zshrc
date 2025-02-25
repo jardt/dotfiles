@@ -20,6 +20,7 @@ export EDITOR="nvim"
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey '^y' autosuggest-accept
+alias vim="nvim"
 
 #zplug
 source ~/.zplug/init.zsh
@@ -81,7 +82,6 @@ function brew() {
 #custom
 . "$HOME/.cargo/env"
 
-alias fra="cd  ~/repos/fusion-resource-allocation-apps.git"
 
 # asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"

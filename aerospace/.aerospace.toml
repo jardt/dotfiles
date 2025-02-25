@@ -47,7 +47,7 @@ automatically-unhide-macos-hidden-apps = false
 # if.workspace = 'workspace-name'
 # if.during-aerospace-startup = true
 # check-further-callbacks = true
-# run = ['layout floating', 'move-node-to-workspace S']  # The callback itself
+# run = ['layout floating', 'move-node-to-workspace S']  
 
 
 [[on-window-detected]]
@@ -190,39 +190,39 @@ if.app-name-regex-substring = 'Teams'
 if.window-title-regex-substring = 'Teams'
 if.during-aerospace-startup = true
 check-further-callbacks = true
-run = ['move-node-to-workspace 9']        # The callback itself
+run = ['move-node-to-workspace 9']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Slack'
 if.window-title-regex-substring = 'Slack'
 if.during-aerospace-startup = true
 check-further-callbacks = true
-run = ['move-node-to-workspace 8']        # The callback itself
+run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Outlook'
 if.window-title-regex-substring = 'Outlook'
 if.during-aerospace-startup = true
 check-further-callbacks = true
-run = ['move-node-to-workspace 8']          # The callback itself
+run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Figma'
 if.window-title-regex-substring = 'Figma'
 if.during-aerospace-startup = true
 check-further-callbacks = true
-run = ['move-node-to-workspace 7']        # The callback itself
+run = ['move-node-to-workspace 7']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Ghostty'
 if.window-title-regex-substring = 'Ghostty'
 if.during-aerospace-startup = true
 check-further-callbacks = true
-run = ['move-node-to-workspace 1']          # The callback itself
+run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'firefox'
 if.window-title-regex-substring = 'firefox'
 if.during-aerospace-startup = true
 check-further-callbacks = true
-run = ['move-node-to-workspace 2']          # The callback itself
+run = ['move-node-to-workspace 2']
