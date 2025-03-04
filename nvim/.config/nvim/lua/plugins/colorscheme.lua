@@ -68,6 +68,9 @@ return {
 		},
 		init = function()
 			vim.cmd([[colorscheme catppuccin-mocha]])
+			vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#df8e1d" })
+			-- vim.api.nvim_set_hl(0, "LineNr", { fg = "yellow" })
+			vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#df8e1d" })
 		end,
 	},
 

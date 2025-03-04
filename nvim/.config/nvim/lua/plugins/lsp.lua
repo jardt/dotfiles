@@ -84,8 +84,10 @@ return {
 						},
 					},
 					taplo = {},
-					html = {},
-					cssls = {},
+					html = { "svelte", "html", "typescriptreact", "javascriptreact " },
+					cssls = {
+						filetypes = { "svelte", "css", "typescriptreact", "javascriptreact " },
+					},
 					tailwindcss = {},
 					lua_ls = {
 						settings = {
