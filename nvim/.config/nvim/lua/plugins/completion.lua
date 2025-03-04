@@ -26,7 +26,7 @@ return {
 			-- See the full "keymap" documentation for information on defining your own keymap.
 			keymap = {
 				preset = "default",
-				-- ['<CR>'] = { 'accept', 'fallback' }, not working well for cmd
+				["<CR>"] = { "accept", "fallback" }, --not working well for cmd
 				["<C-u>"] = { "scroll_documentation_up", "fallback" },
 				["<C-d>"] = { "scroll_documentation_down", "fallback" },
 			},

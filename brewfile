@@ -20,6 +20,7 @@ brew "zoxide"
 brew "zsh-history-substring-search"
 brew "zstd"
 brew "fd"
+brew "zsh-vi-mode"
 
 cask "firefox"
 cask "google-chrome"

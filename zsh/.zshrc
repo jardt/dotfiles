@@ -29,6 +29,11 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "Aloxaf/fzf-tab" 
 
+function zvm_config() {
+    ZVM_CURSOR_STYLE_ENABLED=false
+}
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 zplug "fdellwing/zsh-bat", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh

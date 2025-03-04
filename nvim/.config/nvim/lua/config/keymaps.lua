@@ -1,5 +1,13 @@
 local map = vim.keymap.set
 
+-- Duplicate a line aod comment out the first line
+vim.api.nvim_set_keymap("n", "yc", ":norm yygccp<CR>", { noremap = true })
+-- change in word
+vim.keymap.set("n", "<C-c>", "ciw")
+-- move selected lines with shift j and k
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 map("n", "<leader>p", function()
 	vim.cmd(':normal "0p')
 end, { desc = "Code Action rust" })
@@ -19,8 +27,6 @@ end, { desc = "alernate file" })
 map("n", "<leader>v", function()
 	vim.cmd(":vs")
 end, { desc = "vertical split" })
-
-map("i", "jj", "<Esc>")
 
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })

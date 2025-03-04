@@ -78,9 +78,8 @@ return {
 		keys = {
 			{ "<leader>:", "<cmd>FzfLua command_history<cr>", desc = "Command History" },
 			-- find
-			{ "<leader>fb", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
-			{ "<leader>o", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
-			{ "<leader>ff", "<cmd>FzfLua files<cr>", desc = "Find Files (Root Dir)" },
+			{ "<leader>b", "<cmd>FzfLua buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
+			{ "<leader>o", "<cmd>FzfLua files<cr>", desc = "Find Files (Root Dir)" },
 			{ "<leader>fg", "<cmd>FzfLua git_files<cr>", desc = "Find Files (git-files)" },
 			{ "<leader>fo", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
 			-- git

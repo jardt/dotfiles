@@ -9,6 +9,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+vim.api.nvim_create_autocmd("InsertEnter", {
+	group = augroup("remove cursorline in insert"),
+	callback = function()
+		vim.cmd("set nocursorline")
+	end,
+})
+vim.api.nvim_create_autocmd("InsertLeave", {
+	group = augroup("add cursorline in normalmode"),
+	callback = function()
+		vim.cmd("set cursorline")
+	end,
+})
+
 -- go to last loc when opening a buffer
 vim.api.nvim_create_autocmd("BufReadPost", {
 	group = augroup("last_loc"),
