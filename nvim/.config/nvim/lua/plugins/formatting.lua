@@ -30,6 +30,7 @@ return {
 				yaml = { "yamlfmt", stop_after_first = true },
 				json = { "fixjson", stop_after_first = true },
 				markdown = { "markdownlint", stop_after_first = true },
+				go = { "goimports", "gofumpt" },
 			},
 			default_format_opts = {
 				lsp_format = "fallback",

@@ -32,6 +32,9 @@ zplug "Aloxaf/fzf-tab"
 function zvm_config() {
     ZVM_CURSOR_STYLE_ENABLED=false
 }
+function zvm_after_init() {
+  zvm_bindkey viins '^y' autosuggest-accept
+}
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 zplug "fdellwing/zsh-bat", from:oh-my-zsh

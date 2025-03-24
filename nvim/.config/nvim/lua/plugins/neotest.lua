@@ -8,6 +8,8 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"marilari88/neotest-vitest",
 			"llllvvuu/neotest-foundry",
+			"fredrikaverpil/neotest-golang",
+			"leoluz/nvim-dap-go",
 		},
 		lazy = true,
 		config = function()
@@ -15,6 +17,11 @@ return {
 				adapters = {
 					require("neotest-vitest"),
 					require("rustaceanvim.neotest"),
+					["neotest-golang"] = {
+						-- Here we can set options for neotest-golang, e.g.
+						-- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
+						dap_go_enabled = true, -- requires leoluz/nvim-dap-go
+					},
 					require("neotest-foundry"),
 				},
 			})

@@ -4,6 +4,7 @@ return {
 		desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 		dependencies = {
 			{
+				"leoluz/nvim-dap-go",
 				"rcarriga/nvim-dap-ui",
 				dependencies = { "nvim-neotest/nvim-nio" },
 				keys = {

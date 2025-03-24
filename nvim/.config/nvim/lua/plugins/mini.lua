@@ -55,6 +55,7 @@ return {
 		opts = {
 			file = {
 				[".keep"] = { glyph = "󰊢", hl = "MiniIconsGrey" },
+				[".go-version"] = { glyph = "", hl = "MiniIconsBlue" },
 				["devcontainer.json"] = { glyph = "", hl = "MiniIconsAzure" },
 				[".eslintrc.js"] = { glyph = "󰱺", hl = "MiniIconsYellow" },
 				[".node-version"] = { glyph = "", hl = "MiniIconsGreen" },
@@ -68,6 +69,7 @@ return {
 			},
 			filetype = {
 				dotenv = { glyph = "", hl = "MiniIconsYellow" },
+				gotmpl = { glyph = "󰟓", hl = "MiniIconsGrey" },
 			},
 		},
 		init = function()
