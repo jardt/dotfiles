@@ -21,6 +21,8 @@ brew "zsh-history-substring-search"
 brew "zstd"
 brew "fd"
 brew "zsh-vi-mode"
+brew "uv"
+brew "rainfrog"
 
 cask "firefox"
 cask "google-chrome"
@@ -39,3 +41,4 @@ cask "ghostty"
 cask "raycast"
 cask "font-monaspace"
 cask "kitty"
+
