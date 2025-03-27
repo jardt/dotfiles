@@ -21,6 +21,7 @@ return {
 						"vtsls",
 						"svelte",
 						"clangd",
+						"dockerls",
 					},
 				},
 				config = function(_, opts)
@@ -46,6 +47,7 @@ return {
 							"yamlfmt",
 							"markdownlint",
 							"stylua",
+							"hadolint",
 						},
 					},
 				},
@@ -225,6 +227,7 @@ return {
 					css_variables = {
 						filetypes = { "svelte", "css", "less", "sass", "typescriptreact", "javascriptreact " },
 					},
+					dockerls = {},
 				},
 				setup = {},
 			}

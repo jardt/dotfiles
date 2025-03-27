@@ -20,6 +20,7 @@ return {
 				sql = { "sqruff" },
 				mysql = { "sqruff" },
 				plsql = { "sqruff" },
+				dockerfile = { "hadolint" },
 			}
 
 			vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufEnter" }, {
