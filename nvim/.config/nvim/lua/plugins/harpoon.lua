@@ -20,7 +20,7 @@ return {
 					desc = "Harpoon Quick Menu",
 				},
 				{
-					"<M-j>",
+					"<C-n>",
 					function()
 						local harpoon = require("harpoon")
 						harpoon:list():next()
@@ -28,7 +28,7 @@ return {
 					desc = "Harpoon next",
 				},
 				{
-					"<M-k>",
+					"<C-p>",
 					function()
 						local harpoon = require("harpoon")
 						harpoon:list():prev()
@@ -37,7 +37,7 @@ return {
 				},
 			}
 
-			for i = 1, 5 do
+			for i = 1, 9 do
 				table.insert(keys, {
 					"<leader>" .. i,
 					function()
