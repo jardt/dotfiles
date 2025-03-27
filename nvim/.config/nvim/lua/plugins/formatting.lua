@@ -9,7 +9,7 @@ return {
 		opts = {
 			keys = {
 				{
-					"<leader>cf",
+					"<leader>F",
 					function()
 						require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
 					end,
@@ -31,6 +31,18 @@ return {
 				json = { "fixjson", stop_after_first = true },
 				markdown = { "markdownlint", stop_after_first = true },
 				go = { "goimports", "gofumpt" },
+				sql = { "sqruff" },
+				mysql = { "sqruff" },
+				plsql = { "sqruff" },
+				["*"] = { "injected" }, -- enables injected-lang formatting for all filetypes
+			},
+			formatters = {
+				sqruff = {
+					inherit = false,
+					command = "sqruff",
+					args = { "fix", "--force", "$FILENAME" },
+					stdin = false,
+				},
 			},
 			default_format_opts = {
 				lsp_format = "fallback",

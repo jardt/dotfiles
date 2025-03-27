@@ -17,6 +17,9 @@ return {
 				javascriptreact = { "eslint_d" },
 				svelte = { "eslint_d" },
 				lua = { "luacheck" },
+				sql = { "sqruff" },
+				mysql = { "sqruff" },
+				plsql = { "sqruff" },
 			}
 
 			vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufEnter" }, {

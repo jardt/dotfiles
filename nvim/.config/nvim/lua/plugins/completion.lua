@@ -75,6 +75,7 @@ return {
 					"snippets",
 					"buffer",
 					"ripgrep",
+					"dadbod",
 					"obsidian",
 					"obsidian_new",
 					"obsidian_tags",
@@ -96,6 +97,8 @@ return {
 							additional_rg_options = {},
 						},
 					},
+
+					dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 					lazydev = {
 						name = "LazyDev",
 						module = "lazydev.integrations.blink",
@@ -119,6 +122,7 @@ return {
 				enabled = true,
 				window = { border = "rounded" },
 			},
+			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
 		opts_extend = { "sources.default" },
 	},

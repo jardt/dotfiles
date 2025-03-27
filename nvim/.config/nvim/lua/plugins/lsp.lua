@@ -32,7 +32,22 @@ return {
 				end,
 				dependencies = {
 					"williamboman/mason.nvim",
-					opts = { ensure_installed = { "gomodifytags", "impl", "goimports", "gofumpt", "delve", "ktlint" } },
+					opts = {
+						ensure_installed = {
+							"gomodifytags",
+							"impl",
+							"goimports",
+							"gofumpt",
+							"delve",
+							"ktlint",
+							"sqruff",
+							"pretterd",
+							"fixjson",
+							"yamlfmt",
+							"markdownlint",
+							"stylua",
+						},
+					},
 				},
 			},
 		},
