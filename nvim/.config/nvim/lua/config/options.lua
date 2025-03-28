@@ -21,7 +21,6 @@ vim.opt.wrap = false -- disable linewraps
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.guicursor = ""
 vim.opt.termguicolors = true -- use colors from term
 
 vim.opt.scrolloff = 999
