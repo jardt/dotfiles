@@ -56,21 +56,6 @@ return {
 		opts = function()
 			---@class PluginLspOpts
 			local ret = {
-				-- options for vim.diagnostic.config()
-				---@type vim.diagnostic.Opts
-				diagnostics = {
-					underline = true,
-					update_in_insert = false,
-					virtual_text = {
-						spacing = 4,
-						source = "if_many",
-						prefix = "●",
-						-- this will set set the prefix to a function that returns the diagnostics icon based on the severity
-						-- this only works on a recent 0.10.0 build. Will be set to "●" when not supported
-						-- prefix = "icons",
-					},
-					severity_sort = true,
-				},
 				keys = {
 					{ "K", mode = { "n" }, vim.lsp.buf.hover, desc = "Hover lsp" },
 					{ "gD", mode = { "n" }, vim.lsp.buf.declaration(), desc = "Decleration lsp" },
@@ -297,12 +282,6 @@ return {
 					end, { desc = "toggle inlay hints" })
 				end,
 			})
-
-			local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
-			for type, icon in pairs(signs) do
-				local hl = "DiagnosticSign" .. type
-				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-			end
 		end,
 	},
 	{
