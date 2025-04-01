@@ -22,6 +22,7 @@ return {
 						"svelte",
 						"clangd",
 						"dockerls",
+						"ansiblels",
 					},
 				},
 				config = function(_, opts)
@@ -48,6 +49,7 @@ return {
 							"markdownlint",
 							"stylua",
 							"hadolint",
+							"ansible-lint",
 						},
 					},
 				},
@@ -213,6 +215,9 @@ return {
 						filetypes = { "svelte", "css", "less", "sass", "typescriptreact", "javascriptreact " },
 					},
 					dockerls = {},
+					ansiblels = {
+						filetypes = { "yaml.ansible" },
+					},
 				},
 				setup = {},
 			}
