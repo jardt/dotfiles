@@ -1,11 +1,10 @@
-after-startup-command = ['exec-and-forget sketchybar']
+after-startup-command = ['exec-and-forget sketchybar','exec-and-forget borders']
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = [
-    '/bin/bash',
+   '/bin/bash',
     '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
-    'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
 ]
 
 # Start AeroSpace at login
@@ -38,7 +37,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-cmd-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodness#disable-hide-app
-automatically-unhide-macos-hidden-apps = false
+automatically-unhide-macos-hidden-apps = true
 
 # [[on-window-detected]]
 # if.app-id = 'com.apple.systempreferences'
@@ -136,6 +135,7 @@ ctrl-shift-alt-cmd-l = 'move right'
 ctrl-shift-alt-minus = 'resize smart -50'
 ctrl-shift-alt-equal = 'resize smart +50'
 
+ctrl-shift-alt-0 = 'workspace 0'
 ctrl-shift-alt-1 = 'workspace 1'
 ctrl-shift-alt-2 = 'workspace 2'
 ctrl-shift-alt-3 = 'workspace 3'
@@ -144,8 +144,8 @@ ctrl-shift-alt-5 = 'workspace 5'
 ctrl-shift-alt-6 = 'workspace 6'
 ctrl-shift-alt-7 = 'workspace 7'
 ctrl-shift-alt-8 = 'workspace 8'
-ctrl-shift-alt-9 = 'workspace 9'
 
+ctrl-shift-alt-cmd-0 = 'move-node-to-workspace 1 --focus-follows-window'
 ctrl-shift-alt-cmd-1 = 'move-node-to-workspace 1 --focus-follows-window'
 ctrl-shift-alt-cmd-2 = 'move-node-to-workspace 2 --focus-follows-window'
 ctrl-shift-alt-cmd-3 = 'move-node-to-workspace 3 --focus-follows-window'
@@ -154,7 +154,6 @@ ctrl-shift-alt-cmd-5 = 'move-node-to-workspace 5 --focus-follows-window'
 ctrl-shift-alt-cmd-6 = 'move-node-to-workspace 6 --focus-follows-window'
 ctrl-shift-alt-cmd-7 = 'move-node-to-workspace 7 --focus-follows-window'
 ctrl-shift-alt-cmd-8 = 'move-node-to-workspace 8 --focus-follows-window'
-ctrl-shift-alt-cmd-9 = 'move-node-to-workspace 9 --focus-follows-window'
 
 ctrl-shift-alt-a = 'workspace-back-and-forth'
 ctrl-shift-alt-tab = 'move-workspace-to-monitor --wrap-around next'
@@ -171,6 +170,7 @@ ctrl-shift-alt-m = 'exec-and-forget open -a /Applications/Spotify.app'
 ctrl-shift-alt-t = 'exec-and-forget open -a /Applications/Microsoft\ Teams.app '
 ctrl-shift-alt-d = 'exec-and-forget open -a /Applications/Figma.app'
 ctrl-shift-alt-v = 'exec-and-forget open -a /Applications/Visual Studio Code.app'
+ctrl-shift-alt-i = 'exec-and-forget open -a /Applications/kitty.app'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -190,7 +190,7 @@ if.app-name-regex-substring = 'Teams'
 if.window-title-regex-substring = 'Teams'
 if.during-aerospace-startup = true
 check-further-callbacks = true
-run = ['move-node-to-workspace 9']
+run = ['move-node-to-workspace 6']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Slack'

@@ -6,7 +6,6 @@ set -o inc_append_history
 
 type starship_zle-keymap-select >/dev/null || \
   {
-    echo "Load starship"
     eval "$(starship init zsh)"
   }
 
@@ -20,7 +19,7 @@ export EDITOR="nvim"
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey '^y' autosuggest-accept
-alias vim="nvim"
+alias v="nvim"
 
 #zplug
 source ~/.zplug/init.zsh
@@ -60,10 +59,11 @@ fi
 
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load 
 
-# bun completions
+#completions
 [ -s "/Users/jardar.ton/.bun/_bun" ] && source "/Users/jardar.ton/.bun/_bun"
+export FPATH="~/.zsh_completions/eza/completions/zsh:$FPATH"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -87,7 +87,7 @@ function brew() {
   fi
 }
 
-#custom
+#source cargo 
 . "$HOME/.cargo/env"
 
 
@@ -102,7 +102,10 @@ zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
+
 alias ls='ls --color'
+alias eza='eza -l --icons --color'
 
 eval "$(zoxide init --cmd cd zsh)"
+
 

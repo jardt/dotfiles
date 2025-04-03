@@ -17,7 +17,7 @@ SKETCHYBAR_CONFIG="$HOME/.config/sketchybar"
 
 source "$HOME/.config/sketchybar/colors.sh"
 
-FONT="CaskaydiaCove Nerd Font Mono"
+FONT="Monaspace Krypton"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 ITEM_DIR="$HOME/.config/sketchybar/items"
 
@@ -28,19 +28,19 @@ sketchybar --bar \
     color=$BAR_COLOR \
     margin=0 \
     sticky=on \
-    padding_left=0 \
-    padding_right=0 \
+    padding_left=2 \
+    padding_right=2 \
     notch_width=188 \
     display=all
 
 sketchybar --default \
     background.height=32 \
     icon.color=$WHITE \
-    icon.font="$FONT:Medium:18.0" \
+    icon.font="$FONT:Medium:14.0" \
     icon.padding_left=5 \
     icon.padding_right=5 \
     label.color=$WHITE\
-    label.font="$FONT:Bold:12.0" \
+    label.font="$FONT:Bold:10.0" \
     label.y_offset=1 \
     label.padding_left=0 \
     label.padding_right=10
@@ -55,7 +55,7 @@ for sid in $(aerospace list-workspaces --all); do
         background.color=0xfff7287fd\
         background.corner_radius=5 \
         label.color=$WHITE \
-        background.height=20 \
+        background.height=18 \
         background.drawing=off \
         label="$sid" \
         click_script="aerospace workspace $sid" \
@@ -65,14 +65,14 @@ done
 sketchybar --add item front_app left \
     --set front_app \
     background.color=0xffa6da95 \
-    background.padding_left=20\
+    background.padding_left=40\
     background.padding_right=0 \
     icon.y_offset=1 \
     label.drawing=no \
     script="$PLUGIN_DIR/front_app.sh" \
     background.color=0x00000000 \
     icon.color=0xffa6da95 \
-    icon.font="$FONT:Bold:23.0" \
+    icon.font="$FONT:Bold:18.0" \
     icon.padding_left=0 \
     icon.padding_right=0 \
     icon.y_offset=1 \
@@ -81,7 +81,7 @@ sketchybar --add item front_app left \
     --set front_app.name \
     background.color=0x00000000 \
     icon.drawing=off \
-    label.font="$FONT:Bold:18.0" \
+    label.font="$FONT:Bold:14.0" \
     label.color=$GREEN \
     label.padding_left=5
     label.padding_right=5
