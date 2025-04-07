@@ -1,17 +1,32 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
-palette = "catppuccin_mocha"
+palette = "cyberdream"
 
 [character]
-# Note the use of Catppuccin color 'peach'
-success_symbol = "[[󰄛](green) ❯❯❯](peach)"
-error_symbol = "[[XXX](red) ❯❯❯](peach)"
-vimcmd_symbol = "[❮❮❮](subtext1)"          # For use with zsh-vi-mode
+success_symbol = "[[󰄛](green) ❯❯❯](orange)"
+error_symbol = "[[XXX](red) ❯❯❯](orange)"
+vimcmd_symbol = "[❮❮❮](yellow)"          # For use with zsh-vi-mode
 
 
 [directory]
 truncation_length = 4
-style = "bold lavender"
+style = "bold cyan"
+
+[palettes.cyberdream]
+ bg = "#16181a"
+ bg_alt = "#1e2124"
+ bg_highlight = "#3c4048"
+ fg = "#ffffff"
+ grey = "#7b8496"
+ blue = "#5ea1ff"
+ green = "#5eff6c"
+ cyan = "#5ef1ff"
+ red = "#ff6e5e"
+ yellow = "#f1ff5e"
+ magenta = "#ff5ef1"
+ pink = "#ff5ea0"
+ orange = "#ffbd5e"
+ purple = "#bd5eff"
 
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
@@ -20,7 +35,7 @@ pink = "#f5bde6"
 mauve = "#c6a0f6"
 red = "#ed8796"
 maroon = "#ee99a0"
-peach = "#f5a97f"
+orange = "#f5a97f"
 yellow = "#eed49f"
 green = "#a6da95"
 teal = "#8bd5ca"
@@ -48,7 +63,7 @@ pink = "#f5c2e7"
 mauve = "#cba6f7"
 red = "#f38ba8"
 maroon = "#eba0ac"
-peach = "#fab387"
+orange = "#fab387"
 yellow = "#f9e2af"
 green = "#a6e3a1"
 teal = "#94e2d5"
@@ -134,7 +149,7 @@ format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
 [git_branch]
 format = '\[[$symbol$branch]($style)\]'
-style = "bold mauve"
+style = "bold magenta"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'

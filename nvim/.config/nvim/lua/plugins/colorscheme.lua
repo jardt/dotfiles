@@ -1,7 +1,30 @@
 return {
 	{
+		"scottmckendry/cyberdream.nvim",
+		lazy = false,
+		enabled = true,
+		priority = 1000,
+		config = function()
+			require("cyberdream").setup({
+				variant = "auto",
+				transparent = true,
+				italic_comments = true,
+				hide_fillchars = true,
+				terminal_colors = false,
+				cache = true,
+				borderless_pickers = true,
+				overrides = function(c)
+					return {}
+				end,
+			})
+
+			vim.cmd("colorscheme cyberdream")
+		end,
+	},
+	{
 		"catppuccin/nvim",
 		name = "catppuccin",
+		enabled = false,
 		priority = 1001,
 		lazy = false,
 		config = {

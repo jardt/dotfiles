@@ -27,6 +27,8 @@ zplug "zsh-users/zsh-history-substring-search", as:plugin, defer:3
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "Aloxaf/fzf-tab" 
+zplug "jeffreytse/zsh-vi-mode"
+ zplug "zsh-users/zsh-history-substring-search", as: plugin
 
 function zvm_config() {
     ZVM_CURSOR_STYLE_ENABLED=false

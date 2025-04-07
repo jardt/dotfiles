@@ -1,4 +1,5 @@
-theme = catppuccin-mocha
+theme = cyberdream
+#theme = catppuccin-mocha
 font-family = "Monaspace Krypton"
 font-feature = "ss01"
 font-feature = "ss02"
@@ -23,3 +24,5 @@ macos-non-native-fullscreen=true
 window-decoration = true
 background-opacity = 0.85
 background-blur = true
+
+
