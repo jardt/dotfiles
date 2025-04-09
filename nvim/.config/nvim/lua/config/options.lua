@@ -1,5 +1,12 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.g.have_nerd_font = true
+-- Keep signcolumn on by default
+vim.opt.signcolumn = "yes"
+-- Decrease update time
+vim.opt.updatetime = 250
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 --- SPLITS
 vim.opt.splitbelow = true -- open splits below

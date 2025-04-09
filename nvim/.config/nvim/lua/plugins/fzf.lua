@@ -83,9 +83,11 @@ return {
 			{ "<leader>fg", "<cmd>FzfLua git_files<cr>", desc = "Find Files (git-files)" },
 			{ "<leader>fo", "<cmd>FzfLua oldfiles<cr>", desc = "Recent" },
 			-- git
-			{ "<leader>gc", "<cmd>FzfLua git_bcommits<CR>", desc = "Commits" },
-			{ "<leader>gC", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
+			{ "<leader>gcb", "<cmd>FzfLua git_bcommits<CR>", desc = "Commits buffer" },
+			{ "<leader>gcc", "<cmd>FzfLua git_commits<CR>", desc = "Commits" },
 			{ "<leader>gs", "<cmd>FzfLua git_status<CR>", desc = "Status" },
+			{ "<leader>gb", "<cmd>FzfLua git_blame<CR>", desc = "Blame buffer" },
+			{ "<leader>gt", "<cmd>FzfLua git_tags<CR>", desc = "Tags" },
 			-- search
 			{ '<leader>s"', "<cmd>FzfLua registers<cr>", desc = "Registers" },
 			{ "<leader>sa", "<cmd>FzfLua autocmds<cr>", desc = "Auto Commands" },
@@ -102,7 +104,7 @@ return {
 			{ "<leader>sl", "<cmd>FzfLua loclist<cr>", desc = "Location List" },
 			{ "<leader>sM", "<cmd>FzfLua man_pages<cr>", desc = "Man Pages" },
 			{ "<leader>sm", "<cmd>FzfLua marks<cr>", desc = "Jump to Mark" },
-			{ "<leader>sR", "<cmd>FzfLua resume<cr>", desc = "Resume" },
+			{ "<leader><tab>", "<cmd>FzfLua resume<cr>", desc = "Resume" },
 			{ "<leader>sq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
 			{ "<leader>sw", "<cmd>FzfLua grep_cword<cr>", desc = "Word (Root Dir)" },
 			{ "<leader>sW", "<cmd>FzfLua grep_visual<cr>", mode = "v", desc = "Selection (Root Dir)" },
@@ -134,6 +136,7 @@ return {
 
 			{
 				"<leader>/",
+				desc = "Grep",
 				function()
 					require("fzf-lua").live_grep_native({
 						multiprocess = true,

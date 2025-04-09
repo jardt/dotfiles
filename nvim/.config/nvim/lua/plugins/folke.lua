@@ -207,37 +207,37 @@ return {
 		opts_extend = { "spec" },
 		opts = {
 			preset = "helix",
+			icons = {
+				mappings = vim.g.have_nerd_font,
+			},
 			defaults = {},
 			spec = {
 				{
 					mode = { "n", "v" },
-					{ "<leader><tab>", group = "tabs" },
-					{ "<leader>c", group = "code" },
-					{ "<leader>D", group = "debug" },
+					{ "<leader>c", group = "[c]ode" },
+					{ "<leader>D", group = "[D]ebug" },
 					{ "<leader>Dp", group = "profiler" },
-					{ "<leader>f", group = "file/find" },
-					{ "<leader>g", group = "git" },
-					{ "<leader>gh", group = "hunks" },
-					{ "<leader>q", group = "quit/session" },
-					{ "<leader>s", group = "search" },
-					{ "<leader>u", group = "ui", icon = { icon = "󰙵 ", color = "cyan" } },
-					{ "<leader>x", group = "diagnostics/quickfix", icon = { icon = "󱖫 ", color = "green" } },
-					{ "<leader>t", group = "todos", icon = { color = "green" } },
+					{ "<leader>f", group = "[f]ile/[f]ind" },
+					{ "<leader>g", group = "[g]it" },
+					{ "<leader>q", group = "[q]uit/session" },
+					{ "<leader>s", group = "[s]earch" },
+					{ "<leader>u", group = "[u]i", icon = { icon = "󰙵 ", color = "cyan" } },
+					{ "<leader>x", group = "diagnostics/quickfi[x]", icon = { icon = "󱖫 ", color = "green" } },
+					{ "<leader>t", group = "[t]odos", icon = { color = "green" } },
+					{ "<leader>A", group = "[A]nsible", icon = { icon = "󱂚", color = "red" } },
 					{ "[", group = "prev" },
 					{ "]", group = "next" },
-					{ "g", group = "goto" },
-					{ "gs", group = "surround" },
 					{ "z", group = "fold" },
 					{
 						"<leader>b",
-						group = "buffer",
+						group = "[b]uffer",
 						expand = function()
 							return require("which-key.extras").expand.buf()
 						end,
 					},
 					{
 						"<leader>w",
-						group = "windows",
+						group = "[w]indows",
 						proxy = "<c-w>",
 						expand = function()
 							return require("which-key.extras").expand.win()
@@ -285,6 +285,17 @@ return {
 			scroll = { enabled = false },
 			statuscolumn = { enabled = false }, -- we set this in options.lua
 			words = { enabled = true },
+			lazygit = { enabled = true },
+		},
+		keys = {
+			{
+				"<leader>gl",
+				desc = "lazygit",
+				function()
+					---@param opts? snacks.lazygit.Config
+					Snacks.lazygit.open(opts)
+				end,
+			},
 		},
 	},
 	{

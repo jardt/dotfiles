@@ -19,7 +19,7 @@ export EDITOR="nvim"
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 bindkey '^y' autosuggest-accept
-alias v="nvim"
+alias n="nvim"
 
 #zplug
 source ~/.zplug/init.zsh
@@ -106,7 +106,12 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 
 alias ls='ls --color'
-alias eza='eza -l --icons --color'
+alias eza='eza -l --icons=always --color=always'
+alias l='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first'
+alias ll='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -l --git -h'
+alias la='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a'
+alias lla='eza --color=always --color-scale=all --color-scale-mode=gradient --icons=always --group-directories-first -a -l --git -h'
+alias f='vim $(fzf --preview="bat --color=always {}")'
 
 eval "$(zoxide init --cmd cd zsh)"
 
