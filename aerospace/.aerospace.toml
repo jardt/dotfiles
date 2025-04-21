@@ -54,10 +54,6 @@ if.app-name-regex-substring = 'camera'
 run = 'layout floating'
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'trello'
-run = 'layout floating'
-
-[[on-window-detected]]
 if.app-name-regex-substring = 'quicktime'
 run = 'layout floating'
 
@@ -111,7 +107,7 @@ outer.right = 10
 # end tell'
 # '''
 
-ctrl-shift-alt-f = 'fullscreen --no-outer-gaps'
+ctrl-shift-alt-enter = 'fullscreen --no-outer-gaps'
 ctrl-shift-alt-r = 'layout floating tiling'
 
 ctrl-shift-alt-shift-left = 'join-with left'
@@ -144,6 +140,7 @@ ctrl-shift-alt-5 = 'workspace 5'
 ctrl-shift-alt-6 = 'workspace 6'
 ctrl-shift-alt-7 = 'workspace 7'
 ctrl-shift-alt-8 = 'workspace 8'
+ctrl-shift-alt-9 = 'workspace 9'
 
 ctrl-shift-alt-cmd-0 = 'move-node-to-workspace 1 --focus-follows-window'
 ctrl-shift-alt-cmd-1 = 'move-node-to-workspace 1 --focus-follows-window'
@@ -154,15 +151,18 @@ ctrl-shift-alt-cmd-5 = 'move-node-to-workspace 5 --focus-follows-window'
 ctrl-shift-alt-cmd-6 = 'move-node-to-workspace 6 --focus-follows-window'
 ctrl-shift-alt-cmd-7 = 'move-node-to-workspace 7 --focus-follows-window'
 ctrl-shift-alt-cmd-8 = 'move-node-to-workspace 8 --focus-follows-window'
+ctrl-shift-alt-cmd-9 = 'move-node-to-workspace 8 --focus-follows-window'
 
 ctrl-shift-alt-a = 'workspace-back-and-forth'
 ctrl-shift-alt-tab = 'move-workspace-to-monitor --wrap-around next'
 
 ctrl-shift-alt-semicolon = 'mode service'
-ctrl-shift-alt-enter = 'mode apps'
+ctrl-shift-alt-esc = 'mode apps'
 
 ctrl-shift-alt-b = 'exec-and-forget open -a /Applications/Firefox\ Developer\ Edition.app'
-ctrl-shift-alt-o = 'exec-and-forget open -a /Applications/Obsidian.app -a /Applications/Microsoft\ Outlook.app'
+ctrl-shift-alt-f = 'exec-and-forget open -a /Applications/Firefox.app'
+ctrl-shift-alt-o = 'exec-and-forget open -a /Applications/Microsoft\ Outlook.app'
+ctrl-shift-alt-n = 'exec-and-forget open -a /Applications/Obsidian.app'
 ctrl-shift-alt-c = 'exec-and-forget open -a /Applications/Google\ Chrome.app/'
 ctrl-shift-alt-space = 'exec-and-forget open -a /Applications/Ghostty.app'
 ctrl-shift-alt-s = 'exec-and-forget open -a /Applications/Discord.app -a /Applications/Slack.app'
@@ -188,41 +188,59 @@ backspace = ['close-all-windows-but-current', 'mode main']
 [[on-window-detected]]
 if.app-name-regex-substring = 'Teams'
 if.window-title-regex-substring = 'Teams'
-if.during-aerospace-startup = true
-check-further-callbacks = true
-run = ['move-node-to-workspace 6']
+run = ['move-node-to-workspace 9']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Slack'
 if.window-title-regex-substring = 'Slack'
-if.during-aerospace-startup = true
-check-further-callbacks = true
+run = ['move-node-to-workspace 8']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'discord'
+if.window-title-regex-substring = 'discord'
 run = ['move-node-to-workspace 8']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Outlook'
 if.window-title-regex-substring = 'Outlook'
-if.during-aerospace-startup = true
-check-further-callbacks = true
 run = ['move-node-to-workspace 8']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'Obsidian'
+if.window-title-regex-substring = 'Obsidian'
+run = ['move-node-to-workspace 6']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Figma'
 if.window-title-regex-substring = 'Figma'
-if.during-aerospace-startup = true
-check-further-callbacks = true
 run = ['move-node-to-workspace 7']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'kitty'
+if.window-title-regex-substring = 'kitty'
+run = ['move-node-to-workspace 0']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Ghostty'
 if.window-title-regex-substring = 'Ghostty'
-if.during-aerospace-startup = true
-check-further-callbacks = true
-run = ['move-node-to-workspace 1']
+run = ['move-node-to-workspace 0']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'firefox'
 if.window-title-regex-substring = 'firefox'
-if.during-aerospace-startup = true
-check-further-callbacks = true
-run = ['move-node-to-workspace 2']
+run = ['move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'firefox'
+if.window-title-regex-substring = 'firefox'
+run = ['move-node-to-workspace 5']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'chrome'
+if.window-title-regex-substring = 'chrome'
+run = ['move-node-to-workspace 4']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'tradingview'
+if.window-title-regex-substring = 'TradingView'
+run = ['move-node-to-workspace 9']
