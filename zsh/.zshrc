@@ -115,4 +115,4 @@ alias f='vim $(fzf --preview="bat --color=always {}")'
 
 eval "$(zoxide init --cmd cd zsh)"
 
-
+source <(limactl completion zsh)
