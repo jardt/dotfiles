@@ -218,7 +218,7 @@ run = ['move-node-to-workspace 7']
 [[on-window-detected]]
 if.app-name-regex-substring = 'kitty'
 if.window-title-regex-substring = 'kitty'
-run = ['move-node-to-workspace 0']
+run = ['move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'Ghostty'
@@ -230,10 +230,6 @@ if.app-name-regex-substring = 'firefox'
 if.window-title-regex-substring = 'firefox'
 run = ['move-node-to-workspace 5']
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'firefox'
-if.window-title-regex-substring = 'firefox'
-run = ['move-node-to-workspace 5']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'chrome'

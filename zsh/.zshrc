@@ -117,3 +117,4 @@ alias f='vim $(fzf --preview="bat --color=always {}")'
 eval "$(zoxide init --cmd cd zsh)"
 
 source <(limactl completion zsh)
+alias limakube='export KUBECONFIG="/Users/jardar.ton/.lima/k8s/copied-from-guest/kubeconfig.yaml"'
