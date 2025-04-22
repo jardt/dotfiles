@@ -23,16 +23,16 @@ return {
 			},
 		},
 		keys = {
-			{ "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
-			{ "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
+			{ "<leader>dd", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+			{ "<leader>dD", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
 			{ "<leader>cs", "<cmd>Trouble symbols toggle<cr>", desc = "Symbols (Trouble)" },
 			{
 				"<leader>cS",
 				"<cmd>Trouble lsp toggle<cr>",
 				desc = "LSP references/definitions/... (Trouble)",
 			},
-			{ "<leader>xL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
-			{ "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
+			{ "<leader>dL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
+			{ "<leader>dQ", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
 			{
 				"[q",
 				function()
@@ -116,9 +116,9 @@ return {
 				end,
 				desc = "Previous Todo Comment",
 			},
-			{ "<leader>xt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (Trouble)" },
+			{ "<leader>dt", "<cmd>Trouble todo toggle<cr>", desc = "Todo (Trouble)" },
 			{
-				"<leader>xT",
+				"<leader>dT",
 				"<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>",
 				desc = "Todo/Fix/Fixme (Trouble)",
 			},
@@ -215,6 +215,7 @@ return {
 				{
 					mode = { "n", "v" },
 					{ "<leader>c", group = "[c]ode" },
+					{ "<leader>d", group = "[d]iagnostics" },
 					{ "<leader>D", group = "[D]ebug" },
 					{ "<leader>Dp", group = "profiler" },
 					{ "<leader>f", group = "[f]ile/[f]ind" },
@@ -222,7 +223,7 @@ return {
 					{ "<leader>q", group = "[q]uit/session" },
 					{ "<leader>s", group = "[s]earch" },
 					{ "<leader>u", group = "[u]i", icon = { icon = "󰙵 ", color = "cyan" } },
-					{ "<leader>x", group = "diagnostics/quickfi[x]", icon = { icon = "󱖫 ", color = "green" } },
+					{ "<leader>x", group = "close", icon = { color = "red" } },
 					{ "<leader>t", group = "[t]odos", icon = { color = "green" } },
 					{ "<leader>A", group = "[A]nsible", icon = { icon = "󱂚", color = "red" } },
 					{ "[", group = "prev" },

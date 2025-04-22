@@ -107,9 +107,10 @@ return {
 			{ "<leader><tab>", "<cmd>FzfLua resume<cr>", desc = "Resume" },
 			{ "<leader>sq", "<cmd>FzfLua quickfix<cr>", desc = "Quickfix List" },
 			{ "<leader>sw", "<cmd>FzfLua grep_cword<cr>", desc = "Word (Root Dir)" },
+			{ "<leader>*", "<cmd>FzfLua grep_cword<cr>", desc = "Word (Root Dir)" },
 			{ "<leader>sW", "<cmd>FzfLua grep_visual<cr>", mode = "v", desc = "Selection (Root Dir)" },
 			{
-				"<leader>ss",
+				"<leader>l",
 				function()
 					require("fzf-lua").lsp_document_symbols({
 						regex_filter = symbols_filter,
@@ -118,7 +119,7 @@ return {
 				desc = "Goto Symbol",
 			},
 			{
-				"<leader>sS",
+				"<leader>sL",
 				function()
 					require("fzf-lua").lsp_live_workspace_symbols({
 						regex_filter = symbols_filter,

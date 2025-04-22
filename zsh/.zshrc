@@ -28,7 +28,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "Aloxaf/fzf-tab" 
 zplug "jeffreytse/zsh-vi-mode"
- zplug "zsh-users/zsh-history-substring-search", as: plugin
+zplug "zsh-users/zsh-history-substring-search", as:plugin
 
 function zvm_config() {
     ZVM_CURSOR_STYLE_ENABLED=false
@@ -42,6 +42,7 @@ zplug "fdellwing/zsh-bat", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/command-not-found", from:oh-my-zsh
 zplug "plugins/brew", from:oh-my-zsh
+zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
 zplug "plugins/compleat", from:oh-my-zsh
 zplug "plugins/git-extras", from:oh-my-zsh
@@ -96,8 +97,8 @@ function brew() {
 # asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-path+=('/Users/jardar.ton/.dotnet/tools/')
-export PATH
+path+=('~/.dotnet/tools/')
+export PATH="$HOME/.rd/bin:$PATH"
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'

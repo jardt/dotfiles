@@ -92,7 +92,7 @@ return {
 			{ "<Leader>gd", "<cmd>DiffviewFileHistory %<CR>", desc = "diff file" },
 			{ "<Leader>gd", "<cmd>DiffviewFileHistory <CR>", desc = "diff all files" },
 			{ "<Leader>gs", "<cmd>DiffviewOpen<CR>", desc = "diff status" },
-			{ "<Leader>dq", "<cmd>DiffviewClose<CR>", desc = "close diff view" },
+			{ "<Leader>qd", "<cmd>DiffviewClose<CR>", desc = "close diff view" },
 			{
 				"<leader>gS",
 				"<cmd>DiffviewOpen origin/main...HEAD --imply-local<CR>",

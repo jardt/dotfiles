@@ -16,7 +16,7 @@ map("n", "<leader>w", function()
 	vim.cmd(":w")
 end, { desc = "write file" })
 
-map("n", "<leader>dd", function()
+map("n", "<leader>x", function()
 	vim.cmd(":bd")
 end, { desc = "buffer close" })
 
@@ -31,7 +31,7 @@ end, { desc = "vertical split" })
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 -- quit
-map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
+map("n", "<leader>Q", "<cmd>qa<cr>", { desc = "Quit All" })
 
 -- save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
