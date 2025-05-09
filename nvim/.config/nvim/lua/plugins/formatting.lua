@@ -34,6 +34,7 @@ return {
 				sql = { "sqruff" },
 				mysql = { "sqruff" },
 				plsql = { "sqruff" },
+				nix = { "nixfmt" },
 				["*"] = { "injected" }, -- enables injected-lang formatting for all filetypes
 			},
 			formatters = {

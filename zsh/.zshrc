@@ -118,3 +118,5 @@ eval "$(zoxide init --cmd cd zsh)"
 
 source <(limactl completion zsh)
 alias limakube='export KUBECONFIG="/Users/jardar.ton/.lima/k8s/copied-from-guest/kubeconfig.yaml"'
+
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh

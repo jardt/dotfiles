@@ -119,14 +119,14 @@ return {
 									url = "",
 								},
 								schemas = require("schemastore").yaml.schemas({
-									extra = {
-										{
-											description = "k8s jsonschema",
-											fileMatch = "*.yaml",
-											name = "k8s",
-											url = "https://kubernetesjsonschema.dev/v1.14.0/deployment-apps-v1.json",
-										},
-									},
+									-- extra = {
+									-- 	{
+									-- 		description = "k8s jsonschema",
+									-- 		fileMatch = "*.yml",
+									-- 		name = "k8s",
+									-- 		url = "https://kubernetesjsonschema.dev/v1.14.0/deployment-apps-v1.json",
+									-- 	},
+									-- },
 								}),
 							},
 						},
@@ -258,6 +258,18 @@ return {
 					dockerls = {},
 					ansiblels = {
 						filetypes = { "yaml.ansible" },
+					},
+					nixd = {
+						settings = {
+							nixd = {
+								nixpkgs = {
+									expr = "import <nixpkgs> { }",
+								},
+								formatting = {
+									command = { "nixfmt" },
+								},
+							},
+						},
 					},
 				},
 				setup = {},
